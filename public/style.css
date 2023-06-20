@@ -1,0 +1,110 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 5rem;
+    gap: 3rem;
+}
+.bgcolor{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.circle{
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 100%;
+    border:solid black;
+}
+
+.theGame{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.chances{
+    border: solid 1px black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 3rem;
+}
+
+.chances h1{
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    font-size: 4rem;
+}
+
+.play-section{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.box{
+    display: flex;
+    border: solid 2px black;
+    width: 5rem;
+    height: 5rem;
+    box-shadow: 0px 4px 2px rgba(26, 26, 26, 0.562);
+    align-items: center;
+    justify-content: center;
+}
+
+.userInput{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: .2rem;
+}
+
+.userInput input{
+    height: 3rem;
+    width: 5rem;
+    font-size: 2.5rem;
+    outline: none;
+    border: 0px 0px 2px 0px solid black;
+    border-width: 0 0 2px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.EnterBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: .7rem;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1rem 2rem;
+}
+
+.block-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}

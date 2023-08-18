@@ -1,14 +1,15 @@
 import React from "react";
 
-const movie = "KOI MIL GAYA";
+const movie = "GADAR";
 const arr = Array.from(movie);
 let itemList = [];
-        
+let vowelsCount = 0;
 arr.forEach((item,index)=>{
      if(item==='A'||item==='E'||item==='I'||item==='O'||item==='U'){
         itemList.push( 
-            <div className='box' id={index}>{item}</div>
+            <div className='box default' id={index}>{item}</div>
         )    
+        vowelsCount++;
     }
     else if(item===' '){
         itemList.push(
@@ -22,4 +23,4 @@ arr.forEach((item,index)=>{
     }    
  })
 
- export {itemList,arr}
+ export {itemList,arr,vowelsCount}

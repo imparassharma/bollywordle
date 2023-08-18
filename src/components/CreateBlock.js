@@ -1,9 +1,9 @@
 import React from 'react';
-import { itemList, arr } from '../components/Movie';
+import { itemList} from '../components/Movie';
 
 function CreateBlock(props){
     return(
-    <div className="block-container">
+    <div className="block-container" id='blockContainer'>
         {itemList}
     </div>
     )

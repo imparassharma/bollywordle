@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/bollywordle/static/js/main.3682aebb.js",
-    "index.html": "/bollywordle/index.html",
-    "main.3682aebb.js.map": "/bollywordle/static/js/main.3682aebb.js.map"
+    "main.js": "/static/js/main.3682aebb.js",
+    "index.html": "/index.html",
+    "main.3682aebb.js.map": "/static/js/main.3682aebb.js.map"
   },
   "entrypoints": [
     "static/js/main.3682aebb.js"

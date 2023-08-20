@@ -10,14 +10,58 @@ body{
     background-color: rgba(12, 12, 12, 0.397);
 }
 
+.topContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.history{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 20px;
+    position: relative;
+    right: 5rem;
+}
+
+.dark{
+    background: #1B262C !important;
+}
+
+.light{
+    background-color: #C9D6DF !important;
+}
+
+.lightText{
+    color: #C9D6DF !important;
+}
+
+.usedWords{
+    padding: 1rem;
+    width: 30rem;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 42px;
+    font-weight: 600;
+    margin-top: 0;
+}
+
+.history h1{
+    margin-bottom: 0;
+}
+
 .main{
     display: flex;
     flex-direction: column;
     gap: 3rem;
+    background:linear-gradient(320deg,#EEF2FF ,#EEF2FF);
 }
 
 .topContainer{
-    margin: 2rem 0rem 0rem 2rem;
+    margin: 0rem 0rem 0rem 2rem;
 }
 
 .mainContainer{
@@ -37,6 +81,7 @@ body{
     width: 1.5rem;
     border-radius: 100%;
     border:solid black;
+    background-color: #1B262C;
     cursor: pointer;
 }
 
@@ -54,6 +99,7 @@ body{
     justify-content: center;
     gap: 2rem;
     padding: 1rem 3rem;
+    color:#1B262C;
 }
 
 .chances h1{
@@ -61,7 +107,6 @@ body{
     flex-direction: row;
     gap: 3rem;
     font-size: 4rem;
-    color:#1B262C;
 }
 
 .play-section{
@@ -172,48 +217,11 @@ body{
 .default{
     background-color: rgba(12, 12, 12, 0.397)
 }
-.red_theme{
-    background:linear-gradient(320deg,#f90717d5,#f90717d5);
-}
-
-.blue_theme{
-    background:linear-gradient(320deg,#87cef7,#87cef7);
-}
-
-.yellow_theme{
-    background:linear-gradient(320deg,#FBFF00,#FBFF00);
-}
-
-.white_theme{
-    background:linear-gradient(320deg,#EEF2FF ,#EEF2FF);
-}
-
-.purple_theme{
-    background:linear-gradient(320deg,#b5e2e9 10%,#a09dec);
-}
-
 
 .white{
     background-color:#EEF2FF !important;
 }
 
-.red{
-    background-color: #f53c3cc7 !important;
-}
-
-
-.blue{
-    background-color: #6eb6ffc9 !important;
-}
-
-.yellow{
-    background-color: #ffc83cc0 !important;
-}
-
-.purple{
-    background-color: #7F78D2 !important;
-}
-
-.green{
-    background-color: #17B978 !important;
+.black{
+    background-color: #1B262C;
 }

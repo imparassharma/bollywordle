@@ -4,7 +4,7 @@ import MainSection from '../components/main-section'
 
 function Main(){
     return(
-        <div className='main white_theme'>
+        <div className='main' id='main'>
             <TopSection/>
             <MainSection/>
         </div>

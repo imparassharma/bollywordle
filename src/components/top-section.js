@@ -1,31 +1,32 @@
 import React, { useRef } from "react";
+import UsedBarComponent from "./usedBar";
 
 function TopSection(){
     const handleClick = (e) => {
-        const colors = document.querySelectorAll(".circle");
-        const main = document.querySelector(".main")
-        console.log(colors);
-
-                const circle = e.currentTarget;
-                const bg_color = circle.classList[1];
-                colors.forEach(function(c){
-                    c.classList.remove("current");
-                })
-            
-                main.className = "main "+bg_color+"_theme";
-                circle.classList.add("current");
+        const theme = document.getElementById("theme");
+        const main = document.getElementById("main");
+        const chances = document.getElementById("chances");
+        const usedBar = document.getElementById("usedBar");
+        const word = document.getElementById("word");
+        const usedText = document.getElementById("usedText");
+        usedText.classList.toggle("lightText");
+        usedBar.classList.toggle("light");
+        main.classList.toggle("dark");
+        theme.classList.toggle("light");
+        word.classList.toggle("lightText");
+        chances.classList.toggle("light");
             
     }
   
     return(
         <div className="topContainer">
             <div className="bgcolor">
-                <div className="circle white current" onClick={handleClick}></div>
-                <div className="circle red" onClick={handleClick}></div>
-                <div className="circle blue" onClick={handleClick}></div>
-                <div className="circle yellow" onClick={handleClick}></div>
-                <div className="circle purple" onClick={handleClick}></div>
+                <div className="circle" onClick={handleClick} id="theme"></div>
             </div>
+            <div className="history" id="used">
+                <h1 id="usedText">Used Words!</h1>
+                <UsedBarComponent/>
+        </div>
         </div>
     );
 }

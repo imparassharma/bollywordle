@@ -1,50 +1,67 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import Block from "./CreateBlock";
 import { arr } from "./Movie";
 import { vowelsCount } from "./Movie";
+import UsedBarComponent from "./usedBar";
+
 
 function MainSection(){
-    const myRef = useRef(null);
-    let life = 9;
+    
+    const [inputValue, setInputValue] = useState("");
+    const [usedStr, setUsedStr] = useState("");
+    const [life, setLife] = useState(9);
     let correct = 0;
-    const handleClick = () => {
-        const game = document.getElementById("theGame");
-        const won = document.getElementById("won");
-        const over = document.getElementById("lost");
-        const inputValue = myRef.current.value;
-        const Value = inputValue.toUpperCase();
-        let index=[];
-        for(let i=0;i<arr.length;i++){
-            if(arr[i]===Value){
-                correct++;
-                console.log(correct);
-                index.push(i);
+    const game = document.getElementById("theGame");
+    const won = document.getElementById("won");
+    const over = document.getElementById("lost");
+    const Value = inputValue.toUpperCase();
+    const usedBar = document.getElementById("usedBar");
+    let index=[];
+
+    const handleBlur = (event) => {
+        setInputValue(event.target.value);
+    };
+
+
+    const enterKeyPressed= (event) =>{
+        if(event.key=="Enter")
+        {
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]===Value){
+                    correct++;
+                    console.log(correct);
+                    index.push(i);
+                }
             }
-        }
-        for(let i=0;i<index.length;i++){
-            const element = document.getElementById(index[i]);
-            element.innerHTML = Value;
-            element.classList.add("green");
-        }
+            for(let i=0;i<index.length;i++){
+                const element = document.getElementById(index[i]);
+                element.innerHTML = Value;
+                element.classList.add("green");
+            }
 
-        if(!arr.includes(Value)){
-            const lives = document.getElementById("lives").children;
-            life--;
-            console.log("hey");
-            lives[8-life].classList.add("wrong");
-        }
+            if(!arr.includes(Value)){
+                console.log("wrong");
+                const lives = document.getElementById("lives").children;
+                setLife((prevLife) => prevLife - 1);
+                lives[8- (life-1)].classList.add("wrong");
+                const newUsedStr = usedStr + Value + ", ";
+                setUsedStr(newUsedStr)
+                const usedLettersElement = document.getElementById("usedBar");
+                usedLettersElement.innerHTML = newUsedStr;
+            }
 
-        if(life===0){
-           
-            game.className = "theGame hidden";
-            over.className = "gameOver show";
-        }
+            if(life===1){
+            
+                game.className = "theGame hidden";
+                over.className = "gameOver show";
+            }
 
-        if(correct+vowelsCount === arr.length){
-            game.className = "theGame hidden";
-            won.className = "gameWon show";
-        }
+            if(correct+vowelsCount === arr.length){
+                game.className = "theGame hidden";
+                won.className = "gameWon show";
+            }
 
+        }
     }
 
     return(
@@ -56,7 +73,7 @@ function MainSection(){
                 <h1>YOU WON!!</h1>
             </div>
             <div className="theGame" id="theGame">
-                <div className="chances">
+                <div className="chances" id="chances">
                     <h1 id="lives">
                         <span id="B">B</span>
                         <span id="O">O</span>
@@ -73,16 +90,12 @@ function MainSection(){
                     <Block/>
                 </div>
                 <div className="userInput">
-                    <h1>ENTER A WORD</h1>
-                    <input id="guess" maxLength="1" ref={(ref) => (myRef.current = ref)}></input>
-                </div>
-                <div className="EnterBtn">
-                    <button className="enter" onClick={handleClick} >ENTER</button>
+                    <h1 id="word">ENTER A WORD</h1>
+                    <input id="guess" maxLength="1"  value={inputValue} onChange={(e) => setInputValue(e.target.value)}  onBlur={handleBlur} onKeyPress={enterKeyPressed}></input>
                 </div>
             </div>
         </div>
     );
-}
-
+    }
 
 export default MainSection;

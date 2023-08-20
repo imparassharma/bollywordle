@@ -26,7 +26,7 @@ function TopSection(){
             <div className="history" id="used">
                 <h1 id="usedText">HISTORY</h1>
                 <UsedBarComponent/>
-        </div>
+            </div>
         </div>
     );
 }

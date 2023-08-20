@@ -89,6 +89,7 @@ function MainSection(){
         if(correct === arr.length){  //won the game
             game.className = "theGame hidden";
             won.className = "gameWon show";
+            used.classList.add("hidden");
         }
     },[correct]);
 

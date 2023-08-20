@@ -22,6 +22,7 @@ function MainSection(){
     const Value = inputValue.toUpperCase();
     const usedBar = document.getElementById("usedBar");
     const warn = document.getElementById("warn");
+    const used = document.getElementById("used");
 
     const handleBlur = (event) => {  //whenever any action taken after entering input value it will update/store that value
         setInputValue(event.target.value);
@@ -66,6 +67,7 @@ function MainSection(){
             if(life===1){ //when lives are 0 then game over message is generated
                 game.className = "theGame hidden";
                 over.className = "gameOver show";
+                used.classList.add("hidden");
             }
         }
     }

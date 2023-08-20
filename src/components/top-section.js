@@ -24,7 +24,7 @@ function TopSection(){
                 <div className="circle" onClick={handleClick} id="theme"></div>
             </div>
             <div className="history" id="used">
-                <h1 id="usedText">Used Words!</h1>
+                <h1 id="usedText">HISTORY</h1>
                 <UsedBarComponent/>
         </div>
         </div>

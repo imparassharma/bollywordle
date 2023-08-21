@@ -27,7 +27,7 @@ body{
 }
 
 .dark{
-    background: #1B262C !important;
+    background:linear-gradient(130deg,#252B48,#445069) !important;
 }
 
 .light{
@@ -46,7 +46,7 @@ body{
     width: 30rem;
     border: 1px solid black;
     border-radius: 10px;
-    font-size: 40px;
+    font-size: 32px;
     font-weight: 600;
     margin-top: 0;
 }
@@ -59,7 +59,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    background:linear-gradient(320deg,#EEF2FF ,#EEF2FF);
+    background:linear-gradient(320deg,#DCD6F7,#DBE2EF);
 }
 
 .topContainer{
@@ -72,19 +72,18 @@ body{
     height: 100vh;
 }
 
-.bgcolor{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
 
 .circle{
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1rem;
+    width: 1rem;
     border-radius: 100%;
     border:solid black;
     background-color: #1B262C;
     cursor: pointer;
+}
+
+#DarkTheme{
+    margin-left: 1.7rem;
 }
 
 .theGame{
@@ -100,7 +99,7 @@ body{
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
-    padding: 1rem 3rem;
+    padding: .2rem 3rem;
     color:#1B262C;
 }
 
@@ -109,6 +108,7 @@ body{
     flex-direction: row;
     gap: 3rem;
     font-size: 4rem;
+    color:black;
 }
 
 .play-section{
@@ -140,6 +140,16 @@ body{
     font-weight: 600;
 }
 
+.toggle {
+    border: 1px solid #1B262C;
+    display: flex;
+    height: 1rem;
+    width: 3rem;
+    padding: 0.35rem 0.2rem;
+    border-radius: 25px;
+    background-color: hsl(223, 50%, 87%);
+    align-items: center;
+}
 
 .userInput{
     border: solid 1px black;
@@ -199,7 +209,7 @@ body{
 
 
 .wrong{
-    color: red;
+    color: #F05454;
 }
 
 .hidden{
@@ -208,7 +218,7 @@ body{
 
 .gameWon.show{
     display: block;
-    color: rgb(45, 248, 0);
+    color: #03C988;
     font-size: 6rem;
 }
 
@@ -245,4 +255,43 @@ body{
 .warning img{
     width: 1rem;
     height: 1rem;
+}
+
+.after{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.result h1{
+    margin-bottom: 2rem;
+}
+
+.result h2{
+    font-size: 5rem;
+    margin: auto 0;
+}
+
+.gameOver h3,.gameWon h3{
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 1rem;
+}
+
+.result{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.back{
+    cursor: pointer;
+}
+
+.back:hover{
+    color: black;
 }

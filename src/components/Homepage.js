@@ -47,9 +47,6 @@ function Homepage(){
         })  
     }
 
-
-
-
     return(
 
         <div className="homepage">

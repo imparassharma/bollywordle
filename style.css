@@ -274,11 +274,18 @@ body{
     margin: auto 0;
 }
 
-.gameOver h3,.gameWon h3{
+#backbtn{
     font-size: 2rem;
     position: absolute;
-    top: 0;
+    top: 1rem;
     left: 1rem;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+#backbtn:hover{
+    font-weight: 600;
 }
 
 .result{
@@ -288,10 +295,76 @@ body{
     flex-direction: column;
 }
 
-.back{
-    cursor: pointer;
+
+.homepage h1{
+    font-size: 7rem;
+    letter-spacing: 1.5rem;
+    margin-top: 0;
+    border: 3px solid black;
+    padding: 1.5rem;
 }
 
-.back:hover{
-    color: black;
+.homepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+      background:linear-gradient(20deg,#607EAA,#B2C8DF);
+    height: 100vh;
+}
+
+#play,#challenge{
+    font-size: 3rem;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color:#1B262C;
+    text-align: center;
+    outline: none;
+    border: none;
+}
+
+#play{
+    width: 10rem;
+}
+
+#challenge{
+    width: 20rem;
+}
+
+#play:hover{
+    background-color: #03C988;
+    letter-spacing: .5rem;
+}
+
+#challenge:hover{
+    background-color: #F05454;
+    letter-spacing: .5rem;
+}
+
+.movieSection{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.challengeSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.challengeSection input{
+    width: 30rem;
+    border: 0px 0px 2px 0px solid black;
+    text-transform: uppercase;
+    outline: none;
+    border-width: 0 0 2px;
+    background: transparent;
+    margin-bottom: -4rem;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: .1rem;
 }

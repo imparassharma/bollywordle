@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Block from "./CreateBlock";
-import { arr } from "./Movie";
-import { vowelsCount } from "./Movie";
+import {arr,vowelsCount} from "./Homepage";
 import UsedBarComponent from "./usedBar";
-
+import {Link} from "react-router-dom";
 import warningImg from "../images/warning.png";
 
 
@@ -37,10 +36,6 @@ function MainSection(){
         setInputValue(Value);
         console.log(Value);
         updateWarn(Value.includes("a") ||Value.includes("e") || Value.includes("i")||Value.includes("o")||Value.includes("u"))
-    }
-
-    const handleBack = (event) =>{
-   
     }
     
     const enterKeyPressed= (event) =>{
@@ -125,6 +120,12 @@ function MainSection(){
         }
       }, [life]);*/
 
+      const handleClear =(event) =>{
+        const blockContainer = document.getElementById(blockContainer);
+        if (blockContainer) {
+            blockContainer.innerHTML = ""; // Clear the innerHTML
+        }
+      }
 
 
     return(
@@ -134,14 +135,14 @@ function MainSection(){
                     <h1>GAME OVER!!</h1>
                     <h2 id="ans">{arr}</h2>
                 </div>
-                <h3 className="back" id="backL" onClick={handleBack}>BACK</h3>
+                <Link id="backbtn" to="/" onClick={handleClear} >BACK</Link>
             </div>
             <div className="gameWon hidden" id="won">
                 <div className="result">
                     <h1>GAME WON!!</h1>
                     <h2 id="ans">{arr}</h2>
                 </div>
-                <h3 className="back" id="backW" onClick={handleBack}>BACK</h3>
+                <Link id="backbtn" to="/" onClick={handleClear}>BACK</Link>
             </div>
             <div className="theGame" id="theGame">
                 <div className="chances" id="chances">

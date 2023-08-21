@@ -1,5 +1,5 @@
 import React from 'react';
-import { itemList} from '../components/Movie';
+import { itemList} from '../components/Homepage';
 
 function CreateBlock(props){
     return(

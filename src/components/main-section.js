@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Block from "./CreateBlock";
 import {arr,vowelsCount} from "./Homepage";
-import UsedBarComponent from "./usedBar";
 import {Link} from "react-router-dom";
 import warningImg from "../images/warning.png";
 

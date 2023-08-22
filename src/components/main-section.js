@@ -80,7 +80,7 @@ function MainSection(){
             }
             setInputValue("");
         })
-    },[index]);
+    },[index,Value]);
 
     //To keep check if all the correct guess are made
     useEffect(()=>{

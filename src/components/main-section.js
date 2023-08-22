@@ -93,7 +93,7 @@ function MainSection(){
             used.classList.add("hidden");
             top.classList.add("hidden");
         }
-    },[correct,game,won,used.classList,top.classList]);
+    },[correct]);
 
     const isImageLoaded = () => {
         handleImage(true);
@@ -125,6 +125,7 @@ function MainSection(){
       }
       
       useEffect(() => {
+        console.log("herererere");
         const blockContainer = document.getElementById("blockContainer");
         blockContainer.innerHTML = "";
     }, [clearFlag]);

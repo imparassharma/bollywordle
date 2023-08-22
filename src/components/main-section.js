@@ -90,7 +90,7 @@ function MainSection(){
             used.classList.add("hidden");
             top.classList.add("hidden");
         }
-    },[correct]);
+    },[correct,game,won,used.classList,top.classList]);
 
     const isImageLoaded = () => {
         handleImage(true);

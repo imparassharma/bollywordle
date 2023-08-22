@@ -74,7 +74,6 @@ function MainSection(){
         }
     }
  
-    console.log(correct);
     //To keep check if all the correct guess are made
     useEffect(()=>{
         if(correct === arr.length){  //won the game

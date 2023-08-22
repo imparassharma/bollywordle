@@ -17,7 +17,6 @@ function MainSection(){
     const [clearFlag, setclearFlag] = useState(false);
 
     const game = document.getElementById("theGame");
-    const blockContainer = document.getElementById("blockContainer");
 
 
     const won = document.getElementById("won");

@@ -112,7 +112,7 @@ function MainSection(){
 
 
       const handleClear =(event) =>{
-        setcorrect(vowelCount);
+        console.log("handleClear");
     }
 
     return(

@@ -19,7 +19,6 @@ function MainSection(){
     const won = document.getElementById("won");
     const over = document.getElementById("lost");
     const Value = inputValue.toUpperCase();
-    const usedBar = document.getElementById("usedBar");
     const warn = document.getElementById("warn");
     const used = document.getElementById("used");
     const top = document.getElementById("top");
@@ -38,7 +37,7 @@ function MainSection(){
     }
     
     const enterKeyPressed= (event) =>{
-        if(event.key=="Enter") //function activated if pressed key is enter
+        if(event.key==="Enter") //function activated if pressed key is enter
         {
             console.log(warning);
             if(warning===true){
@@ -46,7 +45,7 @@ function MainSection(){
             }
             let updatedCorrect = correct;
             for(let i=0;i<arr.length;i++){
-                if(arr[i]===Value && !index.has(i) && Value!=["A","E","I","O","U"]){ //to check if correct guess is made again so no increment then
+                if(arr[i]===Value && !index.has(i) && Value!==["A","E","I","O","U"]){ //to check if correct guess is made again so no increment then
                     updatedCorrect++;  //if correct guess incrementing the correct value to keep check on correct guess
                     setindex((prevIndex) => new Set(prevIndex).add(i));  //pushing the index where value is matched
                 }

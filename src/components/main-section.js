@@ -128,7 +128,7 @@ function MainSection(){
       
       useEffect(() => {
         blockContainer.innerHTML = "";
-    }, [blockContainer.innerHTML]);
+    }, [blockContainer]);
 
 
 

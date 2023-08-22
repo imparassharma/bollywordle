@@ -112,7 +112,6 @@ function MainSection(){
 
 
       const handleClear =(event) =>{
-        setItemList([]);
         setcorrect(vowelCount);
     }
 

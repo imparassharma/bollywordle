@@ -19,7 +19,6 @@ function MainSection(){
     const won = document.getElementById("won");
     const over = document.getElementById("lost");
     const Value = inputValue.toUpperCase();
-    const warn = document.getElementById("warn");
     const used = document.getElementById("used");
     const top = document.getElementById("top");
 
@@ -119,7 +118,7 @@ function MainSection(){
       }, [life]);*/
 
       const handleClear =(event) =>{
-        const blockContainer = document.getElementById(blockContainer);
+        const blockContainer = document.getElementById("blockContainer");
         if (blockContainer) {
             blockContainer.innerHTML = ""; // Clear the innerHTML
         }

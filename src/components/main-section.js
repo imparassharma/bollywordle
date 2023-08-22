@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Block from "./CreateBlock";
 import {arr,vowelsCount} from "./Homepage";
 import {Link} from "react-router-dom";
 import warningImg from "../images/warning.png";
-
+import { itemList} from '../components/Homepage';
 
 function MainSection(){
     
@@ -116,7 +115,7 @@ function MainSection(){
       }, [life]);*/
 
       const handleClear =(event) =>{
-        const blockContainer = document.getElementById("blockContainer");
+        const blockContainer = document.getElementById(blockContainer);
         if (blockContainer) {
             blockContainer.innerHTML = ""; // Clear the innerHTML
         }
@@ -154,7 +153,9 @@ function MainSection(){
                     </h1>
                 </div>
                 <div className="play-section">
-                    <Block/>
+                <div className="block-container" id='blockContainer'>
+                    {itemList}
+                </div>
                 </div>
                 <div className="bottomSection">
                     <div className="userInput">

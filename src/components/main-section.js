@@ -122,10 +122,7 @@ function MainSection(){
       }, [life]);*/
 
       const handleClear =(event) =>{
-        if (blockContainer) {
-            blockContainer.innerHTML = ""; // Clear the innerHTML
             setclearFlag(true);
-        }
       }
       
       useEffect(() => {

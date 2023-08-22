@@ -12,7 +12,6 @@ function MainSection(){
     const [correct,setcorrect] = useState(vowelCount);
     const [warning,updateWarn] = useState(false);
     const [isImage,handleImage] = useState(false);
-    const [UpdateitemList,setItemList] = useState(itemList)
     
     const game = document.getElementById("theGame");
     const won = document.getElementById("won");
@@ -146,7 +145,7 @@ function MainSection(){
                 </div>
                 <div className="play-section">
                 <div className="block-container" id='blockContainer'>
-                    {UpdateitemList}
+                    {itemList}
                 </div>
                 </div>
                 <div className="bottomSection">

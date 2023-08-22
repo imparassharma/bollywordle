@@ -6,12 +6,10 @@ import Homepage from './components/Homepage';
 // Root component
 function App() {
   return (
-  <HashRouter>
     <Routes>
         <Route exact path="/" element={<Homepage/>}/>
         <Route exact path="/main" element={<Main/>} />
     </Routes>
-  </HashRouter>
 );
 }
 

@@ -120,7 +120,6 @@ function MainSection(){
       }, [life]);*/
 
       const handleClear =(event) =>{
-        blockContainer = document.getElementById("blockContainer");
         if (blockContainer) {
             blockContainer.innerHTML = ""; // Clear the innerHTML
         }

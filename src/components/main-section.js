@@ -125,7 +125,6 @@ function MainSection(){
       }
       
       useEffect(() => {
-        const blockContainer = document.getElementById("blockContainer");
         blockContainer.innerHTML = "";
     }, [blockContainer.innerHTML]);
 

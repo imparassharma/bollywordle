@@ -1,12 +1,9 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import UsedBarComponent from "./usedBar";
 
 function TopSection(){
     const handleClick = (e) => {
-        const theme = document.getElementById("theme");
         const main = document.getElementById("main");
-        const chances = document.getElementById("chances");
-        const usedBar = document.getElementById("usedBar");
         const word = document.getElementById("word");
         const usedText = document.getElementById("usedText");
         const DarkTheme = document.getElementById("DarkTheme");

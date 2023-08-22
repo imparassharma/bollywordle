@@ -14,6 +14,8 @@ function MainSection(){
     const [correct,setcorrect] = useState(vowelsCount);
     const [warning,updateWarn] = useState(false);
     const [isImage,handleImage] = useState(false);
+    const [clearFlag, setclearFlag] = useState(false);
+
     const game = document.getElementById("theGame");
     const blockContainer = document.getElementById("blockContainer");
 
@@ -122,12 +124,13 @@ function MainSection(){
       const handleClear =(event) =>{
         if (blockContainer) {
             blockContainer.innerHTML = ""; // Clear the innerHTML
+            setclearFlag(true);
         }
       }
       
       useEffect(() => {
         blockContainer.innerHTML = "";
-    }, [blockContainer]);
+    }, [clearFlag]);
 
 
 

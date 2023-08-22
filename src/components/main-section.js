@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
-import {arr,vowelsCount} from "./Homepage";
+import {arr,vowelCount} from "./Homepage";
 import {Link} from "react-router-dom";
 import warningImg from "../images/warning.png";
-import { itemList} from '../components/Homepage';
+import { itemList } from '../components/Homepage';
 
 function MainSection(){
     
     const [inputValue, setInputValue] = useState("");
     const [usedStr, setUsedStr] = useState("");
     const [life, setLife] = useState(9);
-    const [index, setindex] = useState(new Set());
-    const [correct,setcorrect] = useState(vowelsCount);
+    const [correct,setcorrect] = useState(vowelCount);
     const [warning,updateWarn] = useState(false);
     const [isImage,handleImage] = useState(false);
+    const [UpdateitemList,setItemList] = useState(itemList)
+    
     const game = document.getElementById("theGame");
-
     const won = document.getElementById("won");
     const over = document.getElementById("lost");
     const Value = inputValue.toUpperCase();
@@ -41,9 +41,15 @@ function MainSection(){
             }
             let updatedCorrect = correct;
             for(let i=0;i<arr.length;i++){
-                if(arr[i]===Value && !index.has(i) && Value!==["A","E","I","O","U"]){ //to check if correct guess is made again so no increment then
+                if(arr[i]===Value && Value!==["A","E","I","O","U"]){ //to check if correct guess is made again so no increment then
                     updatedCorrect++;  //if correct guess incrementing the correct value to keep check on correct guess
-                    setindex((prevIndex) => new Set(prevIndex).add(i));  //pushing the index where value is matched
+                    const element = document.getElementById(i);
+                    if(!element.classList.contains("green"))
+                    {
+                        element.innerHTML = Value;
+                        element.classList.add("green");
+                    }
+                    setInputValue("");  //pushing the index where value is matched
                 }
             }
             setcorrect(updatedCorrect);
@@ -67,18 +73,8 @@ function MainSection(){
             }
         }
     }
-    useEffect(()=>{
-        index.forEach((currentIndex) => {
-            const element = document.getElementById(currentIndex);
-            if(!element.classList.contains("green"))
-            {
-                element.innerHTML = Value;
-                element.classList.add("green");
-            }
-            setInputValue("");
-        })
-    },[index]);
-
+ 
+    console.log(correct);
     //To keep check if all the correct guess are made
     useEffect(()=>{
         if(correct === arr.length){  //won the game
@@ -114,13 +110,11 @@ function MainSection(){
         }
       }, [life]);*/
 
-      const handleClear =(event) =>{
-        const blockContainer = document.getElementById(blockContainer);
-        if (blockContainer) {
-            blockContainer.innerHTML = ""; // Clear the innerHTML
-        }
-      }
 
+      const handleClear =(event) =>{
+        setItemList([]);
+        setcorrect(vowelCount);
+    }
 
     return(
         <div className="mainContainer">
@@ -154,7 +148,7 @@ function MainSection(){
                 </div>
                 <div className="play-section">
                 <div className="block-container" id='blockContainer'>
-                    {itemList}
+                    {UpdateitemList}
                 </div>
                 </div>
                 <div className="bottomSection">

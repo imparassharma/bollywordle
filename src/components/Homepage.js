@@ -3,11 +3,13 @@ import React, { useState} from "react";
 
 let theName = ""; 
 let itemList = [];
-let vowelsCount = 0;
+let vowelCount = 0;
 let arr =[];
 let inputText = "";
 function Homepage(){
-
+    itemList=[];
+    vowelCount = 0;
+    console.log(itemList);
     const [theChallenge,setChallenge] = useState(theName);
     const handleChallenge= (event)=>{
         const movie = document.getElementById("movie");
@@ -20,19 +22,17 @@ function Homepage(){
     const processInput = (event) =>{
         inputText = event.target.value.toUpperCase();
         setChallenge(inputText);
-        console.log(inputText);
     }
 
     const processPlay = (event) =>{
         setChallenge(inputText);
         arr = Array.from(theChallenge);
-        console.log(arr);
         arr.forEach((item,index)=>{
             if(item==='A'||item==='E'||item==='I'||item==='O'||item==='U'){
                 itemList.push( 
                     <div className='box default' id={index}>{item}</div>
                 )    
-                vowelsCount++;
+                vowelCount++;
             }
             else if(item===' '){
                 itemList.push(
@@ -64,6 +64,6 @@ function Homepage(){
 
 export default Homepage;
 export{theName};
-export {itemList, arr, vowelsCount}
+export {itemList, arr, vowelCount}
 
 

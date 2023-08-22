@@ -15,6 +15,8 @@ function MainSection(){
     const [warning,updateWarn] = useState(false);
     const [isImage,handleImage] = useState(false);
     const game = document.getElementById("theGame");
+    const blockContainer = document.getElementById("blockContainer");
+
 
     const won = document.getElementById("won");
     const over = document.getElementById("lost");
@@ -118,7 +120,7 @@ function MainSection(){
       }, [life]);*/
 
       const handleClear =(event) =>{
-        const blockContainer = document.getElementById("blockContainer");
+        blockContainer = document.getElementById("blockContainer");
         if (blockContainer) {
             blockContainer.innerHTML = ""; // Clear the innerHTML
         }

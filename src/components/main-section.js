@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import warningImg from "../images/warning.png";
 import { itemList, lengthArr } from '../components/Homepage';
 
+let correctguess = [];
 function MainSection() {
-
     const [inputValue, setInputValue] = useState("");
     const [usedStr, setUsedStr] = useState("");
     const [life, setLife] = useState(9);
@@ -41,21 +41,30 @@ function MainSection() {
 
     const handleInput = (event) => {
         const Value = event.target.value;
+        if(correctguess.includes(event.target.value.toUpperCase())){
+            console.log("correct guess repeated")
+            updateWarn(true);
+            setInputValue("");
+            return;
+        }
         setInputValue(Value);
         updateWarn(Value.includes("a") || Value.includes("e") || Value.includes("i") || Value.includes("o") || Value.includes("u"));
     };
+
     const enterKeyPressed= (event) =>{
         if(event.key==="Enter") //function activated if pressed key is enter
         {
             if(warning===true){
                 return;
             }
-            let updatedCorrect = correct; // Initialize with the current correct count
+            let updatedCorrect = correct;
             let newCorrectGuess = false;
             for(let i=0;i<arr.length;i++){
+
                 if(arr[i]===Value){ //to check if correct guess is made again so no increment then
+                    correctguess.push(Value);
                     const element = document.getElementById(i);
-                    updatedCorrect++;
+                   updatedCorrect++;
                     newCorrectGuess = true;
 
                     element.innerHTML = Value;
@@ -69,6 +78,7 @@ function MainSection() {
                             won.className = "gameWon show";
                             used.classList.add("hidden");
                             top.classList.add("hidden");
+                            correctguess = [];
                         }
                     }
                     setInputValue("");  //pushing the index where value is matched
@@ -91,14 +101,13 @@ function MainSection() {
                 over.className = "gameOver show";
                 used.classList.add("hidden");
                 top.classList.add("hidden");
+                correctguess = [];
             }
             if (newCorrectGuess) {
                 setcorrect(updatedCorrect); // Only update the correct state if a new correct guess was made
             }
         }
     }
-
-
 
     const isImageLoaded = () => {
         handleImage(true);
@@ -111,6 +120,7 @@ function MainSection() {
     }, []);
 
     const handleClear = (event) => {
+        correctguess = [];
         console.log("handleClear");
     }
 
@@ -166,7 +176,7 @@ function MainSection() {
                     {warning && isImage &&
                         <div className="warning" id="warn">
                                 <img src={warningImg} onLoad={isImageLoaded}></img>
-                                <h2>Vowel cannot be entered!</h2>
+                                <h2>Vowels and Same guess cannot be entered!</h2>
                         </div>}
                 </div>
             </div>

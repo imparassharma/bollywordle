@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/github.io/bollywordle/static/js/main.ad0ba0f2.js",
-    "static/media/warning.png": "/github.io/bollywordle/static/media/warning.48d92c3db392eda919db.png",
-    "index.html": "/github.io/bollywordle/index.html",
-    "main.ad0ba0f2.js.map": "/github.io/bollywordle/static/js/main.ad0ba0f2.js.map"
+    "main.js": "/bollywordle/static/js/main.67530f82.js",
+    "static/media/warning.png": "/bollywordle/static/media/warning.48d92c3db392eda919db.png",
+    "index.html": "/bollywordle/index.html",
+    "main.67530f82.js.map": "/bollywordle/static/js/main.67530f82.js.map"
   },
   "entrypoints": [
-    "static/js/main.ad0ba0f2.js"
+    "static/js/main.67530f82.js"
   ]
 }

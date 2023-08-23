@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { arr, vowelCount, wordCount } from "./Homepage";
 import { Link } from "react-router-dom";
 import warningImg from "../images/warning.png";
-import { itemList } from '../components/Homepage';
+import { itemList, lengthArr } from '../components/Homepage';
 
 function MainSection() {
+
     const [inputValue, setInputValue] = useState("");
     const [usedStr, setUsedStr] = useState("");
     const [life, setLife] = useState(9);
@@ -43,30 +44,38 @@ function MainSection() {
         setInputValue(Value);
         updateWarn(Value.includes("a") || Value.includes("e") || Value.includes("i") || Value.includes("o") || Value.includes("u"));
     };
-
     const enterKeyPressed= (event) =>{
         if(event.key==="Enter") //function activated if pressed key is enter
         {
             if(warning===true){
                 return;
             }
-            let updatedCorrect = correct;
+            let updatedCorrect = correct; // Initialize with the current correct count
+            let newCorrectGuess = false;
             for(let i=0;i<arr.length;i++){
-                if(arr[i]===Value && Value!==["A","E","I","O","U"]){ //to check if correct guess is made again so no increment then
-                    updatedCorrect++;  //if correct guess incrementing the correct value to keep check on correct guess
+                if(arr[i]===Value){ //to check if correct guess is made again so no increment then
                     const element = document.getElementById(i);
-                    if(!element.classList.contains("green"))
-                    {
-                        element.innerHTML = Value;
-                        element.classList.add("green");
-                        console.log("green");
+                    updatedCorrect++;
+                    newCorrectGuess = true;
+
+                    element.innerHTML = Value;
+                    element.classList.add("green");
+                    console.log(correct);
+                    console.log(lengthArr);
+                    console.log(arr.length);
+                    if (correct+1 === (lengthArr)) {
+                        if (game && won && used && top) {
+                            game.className = "theGame hidden";
+                            won.className = "gameWon show";
+                            used.classList.add("hidden");
+                            top.classList.add("hidden");
+                        }
                     }
                     setInputValue("");  //pushing the index where value is matched
                 }
             }
-            setcorrect(updatedCorrect);
-
-            if(!arr.includes(Value)){
+            
+            if(!newCorrectGuess){
                 const lives = document.getElementById("lives").children;  //accessing all the lives individually
                 setLife((prevLife) => prevLife - 1);  //9 lives initally and on each miss -> decrementing it
                 lives[8- (life-1)].classList.add("wrong");  //adding red color to show it is a wrong guess
@@ -83,20 +92,13 @@ function MainSection() {
                 used.classList.add("hidden");
                 top.classList.add("hidden");
             }
+            if (newCorrectGuess) {
+                setcorrect(updatedCorrect); // Only update the correct state if a new correct guess was made
+            }
         }
     }
 
-    useEffect(() => {
-        if (correct === arr.length) {
 
-            if (game && won && used && top) {
-                game.className = "theGame hidden";
-                won.className = "gameWon show";
-                used.classList.add("hidden");
-                top.classList.add("hidden");
-            }
-        }
-    }, [correct]);
 
     const isImageLoaded = () => {
         handleImage(true);

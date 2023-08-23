@@ -1,5 +1,11 @@
 import {Link} from "react-router-dom";
 import React, { useState} from "react";
+import step1 from "../images/step1.png";
+import step2 from "../images/step2.png";
+import step3 from "../images/step3.png";
+import step4 from "../images/step4.png";
+import step5 from "../images/step5.png";
+import step6 from "../images/step6.png";
 
 let theName = ""; 
 let itemList = [];
@@ -7,10 +13,11 @@ let vowelCount = 0;
 let arr =[];
 let inputText = "";
 let wordCount = 0;
+let lengthArr = 0;
 function Homepage(){
+    lengthArr = 0;
     itemList=[];
     vowelCount = 0;
-    console.log(itemList);
     const [theChallenge,setChallenge] = useState(theName);
     const handleChallenge= (event)=>{
         const movie = document.getElementById("movie");
@@ -40,13 +47,13 @@ function Homepage(){
     }
 
     const processPlay = (event) =>{
+        console.log("multiplayer");
         setChallenge(inputText);
         arr = Array.from(theChallenge);
         const groupedItemList = [];
         let currentWord = []; // To store letters of the current word
     
         arr.forEach((item, index) => {
-            console.log(item);
             if (item === ' ') {
                 currentWord.push( 
                     <div className='box blank'></div>
@@ -60,15 +67,16 @@ function Homepage(){
                 ) 
                 vowelCount++;
                 wordCount++;
+                lengthArr++;
             }   
             else {
                 currentWord.push(
                     <div className='box' id={index}></div>
                 );
                 wordCount++;
+                lengthArr++;
             }
         });
-        console.log(groupedItemList);
     
         if (currentWord.length > 0) {
             groupedItemList.push(currentWord); // Add the last word if it's not empty
@@ -80,10 +88,114 @@ function Homepage(){
         ));
     }
 
+    const singlePlayer =(event) =>{
+        const singleGame = "SULTAN";
+        arr= Array.from(singleGame);
+        const groupedItemList = [];
+        let currentWord = []; // To store letters of the current word
+    
+        arr.forEach((item, index) => {
+            if (item === ' ') {
+                currentWord.push( 
+                    <div className='box blank'></div>
+                ) 
+                groupedItemList.push(currentWord); // Add the current word to the grouped array
+                currentWord = []; // Start a new word
+            } 
+            else if(item==='A'||item==='E'||item==='I'||item==='O'||item==='U'){
+                currentWord.push( 
+                    <div className='box default' id={index}>{item}</div>
+                ) 
+                vowelCount++;
+                wordCount++;
+                lengthArr++;
+            }   
+            else {
+                currentWord.push(
+                    <div className='box' id={index}></div>
+                );
+                wordCount++;
+                lengthArr++;
+            }
+        });
+    
+        if (currentWord.length > 0) {
+            groupedItemList.push(currentWord); // Add the last word if it's not empty
+        }
+        itemList = groupedItemList.map((wordArray, wordIndex) => (
+            <div key={wordIndex} className="word-block">
+                {wordArray}
+            </div>
+        ));
+    }
+
+    const handleRules = (event) =>{
+        const theRules = document.getElementById("theRules");
+        const text = document.getElementById("text");
+        theRules.classList.remove("hidden");
+        text.style.zIndex = "-1";
+    }
+
+    const handleClose = (event) =>{
+        const theRules = document.getElementById("theRules");
+        theRules.classList.add("hidden");
+        const text = document.getElementById("text");
+        text.style.zIndex = 1;
+    }
+
     return(
 
         <div className="homepage" id="home">
-            <div className="rightPage">
+            <div className="ruleSection hidden" id="theRules">
+                <div className="close">
+                    <h3 onClick={handleClose} id="closebtn">X</h3>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <h2>Step1</h2>
+                        <p>The number of blocks here indicates the length of the movie.</p>
+                        <p>All the Vowels in the movie name will be visible to the player by default.</p>
+                    </div>
+                    <img src={step1}></img>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <h2>Step2</h2>
+                        <p>This section indicates the number of lives.</p>
+                        <p>9 Letters = 9 Life</p>
+                    </div>
+                    <img src={step2}></img>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <h2>Step3</h2>
+                        <p>This is the interactive section where player will make a guess!</p>
+                    </div>
+                    <img src={step3}></img>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <h2>Step4</h2>
+                        <p>If the guess made by the player is <span id="greenText">correct</span>, It will be filled in its correct position</p>
+                    </div>
+                    <img src={step4}></img>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <h2>Step5</h2>
+                        <p>If the guess made by the player is <span id="redText">wrong</span>, One life will be deducted!</p>
+                    </div>
+                    <img src={step5}></img>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <h2>Step6</h2>
+                        <p>This is the section where player can see the previous guess made</p>
+                    </div>
+                    <img src={step6}></img>
+                </div>
+            </div>
+            <div className="rightPage" id="rightpage">
                 <h3 id="tag">@im_pararsharma</h3>
                 <div className="title">
                     <h1 id="bollywood"><span id="B">B</span>OLLYWOOD</h1>
@@ -102,10 +214,13 @@ function Homepage(){
             </div>
             <div className="leftPage" id="leftpage">
                 <div className="container" id="movie">
+                        <Link id="play" to="/main" onClick={singlePlayer}><h2>Play</h2></Link>
+                </div>
+                <div className="container" id="movie">
                         <button id="challenge" onClick={handleChallenge}><h2>Challenge</h2></button>
                 </div>
                 <div className="container" id="rules">
-                        <h2>RULES</h2>
+                        <h2 onClick={handleRules}>RULES</h2>
                 </div>
             </div>
             <div className="challengeSection hidden" id="giveMovie">
@@ -118,6 +233,6 @@ function Homepage(){
 
 export default Homepage;
 export{theName};
-export {itemList, arr, vowelCount, wordCount}
+export {itemList, arr, vowelCount, wordCount,lengthArr}
 
 

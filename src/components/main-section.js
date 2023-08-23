@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import {arr,vowelCount} from "./Homepage";
-import {Link} from "react-router-dom";
+import { arr, vowelCount, wordCount } from "./Homepage";
+import { Link } from "react-router-dom";
 import warningImg from "../images/warning.png";
 import { itemList } from '../components/Homepage';
 
-function MainSection(){
-    
+function MainSection() {
     const [inputValue, setInputValue] = useState("");
     const [usedStr, setUsedStr] = useState("");
     const [life, setLife] = useState(9);
     const [correct,setcorrect] = useState(vowelCount);
     const [warning,updateWarn] = useState(false);
     const [isImage,handleImage] = useState(false);
-    
+
     const game = document.getElementById("theGame");
     const won = document.getElementById("won");
     const over = document.getElementById("lost");
@@ -20,18 +19,31 @@ function MainSection(){
     const used = document.getElementById("used");
     const top = document.getElementById("top");
 
+    useEffect(() => {
+        const chances = document.getElementById("chances");
 
-    const handleBlur = (event) => {  //whenever any action taken after entering input value it will update/store that value
+        if (wordCount > 10 && chances) {
+            chances.style.marginTop = "-2rem";
+            chances.style.padding = "0rem 3rem";
+
+            const boxes = document.querySelectorAll(".box");
+            boxes.forEach(box => {
+                box.style.width = '5rem';
+                box.style.height = '5rem';
+            });
+        }
+    }, []);
+
+    const handleBlur = (event) => {
         setInputValue(event.target.value);
-              
     };
 
-    const handleInput = (event)=>{
+    const handleInput = (event) => {
         const Value = event.target.value;
         setInputValue(Value);
-        updateWarn(Value.includes("a") ||Value.includes("e") || Value.includes("i")||Value.includes("o")||Value.includes("u"))
-    }
-    
+        updateWarn(Value.includes("a") || Value.includes("e") || Value.includes("i") || Value.includes("o") || Value.includes("u"));
+    };
+
     const enterKeyPressed= (event) =>{
         if(event.key==="Enter") //function activated if pressed key is enter
         {
@@ -47,6 +59,7 @@ function MainSection(){
                     {
                         element.innerHTML = Value;
                         element.classList.add("green");
+                        console.log("green");
                     }
                     setInputValue("");  //pushing the index where value is matched
                 }
@@ -72,49 +85,35 @@ function MainSection(){
             }
         }
     }
- 
-    //To keep check if all the correct guess are made
-    useEffect(()=>{
-        if(correct === arr.length){  //won the game
-            game.className = "theGame hidden";
-            won.className = "gameWon show";
-            used.classList.add("hidden");
-            top.classList.add("hidden");
+
+    useEffect(() => {
+        if (correct === arr.length) {
+
+            if (game && won && used && top) {
+                game.className = "theGame hidden";
+                won.className = "gameWon show";
+                used.classList.add("hidden");
+                top.classList.add("hidden");
+            }
         }
-    },[correct]);
+    }, [correct]);
 
     const isImageLoaded = () => {
         handleImage(true);
     };
 
-    //to let the image load and then show the warning message
     useEffect(() => {
         const warningImage = new Image();
-        warningImage.src = warningImg; // Load the image
-        warningImage.onload = isImageLoaded; // Set the onLoad event handler
+        warningImage.src = warningImg;
+        warningImage.onload = isImageLoaded;
     }, []);
 
-   /*useEffect(() => {
-        console.log(life);
-        const main = document.getElementById("main");
-        if (life <= 5) {
-          main.classList.add("low_life");
-        } else if (life ==3) {
-          main.classList.remove("low_life");
-          main.classList.add("verylow_life");
-        } else if(life==2){
-          main.classList.remove("veryLowLife");
-          main.classList.add("panic_life");
-        }
-      }, [life]);*/
-
-
-      const handleClear =(event) =>{
+    const handleClear = (event) => {
         console.log("handleClear");
     }
 
     return(
-        <div className="mainContainer">
+        <div className="mainContainer" id="mainC">
             <div className="gameOver hidden" id="lost">
                 <div className="result">
                     <h1>GAME OVER!!</h1>
@@ -162,6 +161,6 @@ function MainSection(){
             </div>
         </div>
     );
-    }
+}
 
 export default MainSection;

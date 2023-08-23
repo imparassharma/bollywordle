@@ -25,11 +25,11 @@ body{
 }
 
 .green{
-    background-color: #17B978;
+    background-color: #17B978 !important;
 }
 
 .wrong{
-    color: #F05454;
+    color: #F05454 ;
 }
 
 .hidden{
@@ -177,6 +177,19 @@ body{
     justify-content: center;
     gap: 4rem;
     flex-wrap: wrap;
+}
+
+.blank{
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    width: 1rem !important;
+}
+
+.word-block{
+    display: flex;
+    gap:2rem
 }
 
 .box{
@@ -347,7 +360,11 @@ body{
 }
 
 .title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 5rem;
+    width: 100%;
 }
 
 .text h3{
@@ -424,8 +441,6 @@ body{
     font-family: Future;
     padding: 0;
 }
-
-
 
 #play{
     width: 10rem;

@@ -6,6 +6,7 @@ let itemList = [];
 let vowelCount = 0;
 let arr =[];
 let inputText = "";
+let wordCount = 0;
 function Homepage(){
     itemList=[];
     vowelCount = 0;
@@ -22,7 +23,7 @@ function Homepage(){
         const tag = document.getElementById("tag");
 
         tag.classList.add("hidden");
-        bollywood.style.marginTop = "-25rem";
+        bollywood.style.marginTop = "-35rem";
         text.classList.add("hidden");
         movie.classList.add("hidden");
         giveMovie.classList.remove("hidden");
@@ -41,24 +42,42 @@ function Homepage(){
     const processPlay = (event) =>{
         setChallenge(inputText);
         arr = Array.from(theChallenge);
-        arr.forEach((item,index)=>{
-            if(item==='A'||item==='E'||item==='I'||item==='O'||item==='U'){
-                itemList.push( 
+        const groupedItemList = [];
+        let currentWord = []; // To store letters of the current word
+    
+        arr.forEach((item, index) => {
+            console.log(item);
+            if (item === ' ') {
+                currentWord.push( 
+                    <div className='box blank'></div>
+                ) 
+                groupedItemList.push(currentWord); // Add the current word to the grouped array
+                currentWord = []; // Start a new word
+            } 
+            else if(item==='A'||item==='E'||item==='I'||item==='O'||item==='U'){
+                currentWord.push( 
                     <div className='box default' id={index}>{item}</div>
-                )    
+                ) 
                 vowelCount++;
+                wordCount++;
+            }   
+            else {
+                currentWord.push(
+                    <div className='box' id={index}></div>
+                );
+                wordCount++;
             }
-            else if(item===' '){
-                itemList.push(
-                    <div></div>
-                )
-            }
-            else{
-                itemList.push( 
-                <div className='box' id={index}></div>
-                )   
-            }  
-        })  
+        });
+        console.log(groupedItemList);
+    
+        if (currentWord.length > 0) {
+            groupedItemList.push(currentWord); // Add the last word if it's not empty
+        }
+        itemList = groupedItemList.map((wordArray, wordIndex) => (
+            <div key={wordIndex} className="word-block">
+                {wordArray}
+            </div>
+        ));
     }
 
     return(
@@ -99,6 +118,6 @@ function Homepage(){
 
 export default Homepage;
 export{theName};
-export {itemList, arr, vowelCount}
+export {itemList, arr, vowelCount, wordCount}
 
 

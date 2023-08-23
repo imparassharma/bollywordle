@@ -1,29 +1,15 @@
+@font-face { font-family: Future; src: url('./ELNATH.ttf'); } 
+
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-family: Future;
     overflow: hidden;
 }
 
-
+/* color schemes & themes */
 .default{
     background-color: rgba(12, 12, 12, 0.397);
-}
-
-.topContainer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.history{
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    font-family: 'Barlow Semi Condensed', sans-serif;
-    font-size: 20px;
-    position: relative;
-    right: 5rem;
 }
 
 .dark{
@@ -36,6 +22,96 @@ body{
 
 .lightText{
     color: #C9D6DF !important;
+}
+
+.green{
+    background-color: #17B978 !important;
+}
+
+.wrong{
+    color: #F05454 ;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.gameWon.show{
+    display: block;
+    color: #03C988;
+    font-size: 6rem;
+}
+
+.gameOver.show{
+    display: block;
+    color: rgb(168, 4, 4);
+    font-size: 6rem;
+}
+
+.default{
+    background-color: rgba(12, 12, 12, 0.397)
+}
+
+.white{
+    background-color:#EEF2FF !important;
+}
+
+.black{
+    background-color: #1B262C;
+}
+
+#DarkTheme{
+    margin-left: 1.7rem;
+}
+
+.current {
+    width: 2rem;
+    height: 2rem;
+}
+
+
+
+/*                 Section Heirarchy             */
+
+.topContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0rem 0rem 0rem 2rem;
+}
+
+.toggle {
+    border: 1px solid #1B262C;
+    display: flex;
+    height: 1rem;
+    width: 3rem;
+    padding: 0.35rem 0.2rem;
+    border-radius: 25px;
+    background-color: hsl(223, 50%, 87%);
+    align-items: center;
+}
+
+.circle{
+    height: 1rem;
+    width: 1rem;
+    border-radius: 100%;
+    border:solid black;
+    background-color: #1B262C;
+    cursor: pointer;
+}
+
+.history{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 20px;
+    position: relative;
+    right: 5rem;
+}
+
+.history h1{
+    margin-bottom: 0;
 }
 
 .usedWords{
@@ -51,10 +127,6 @@ body{
     margin-top: 0;
 }
 
-.history h1{
-    margin-bottom: 0;
-}
-
 .main{
     display: flex;
     flex-direction: column;
@@ -62,28 +134,10 @@ body{
     background:linear-gradient(320deg,#DCD6F7,#DBE2EF);
 }
 
-.topContainer{
-    margin: 0rem 0rem 0rem 2rem;
-}
-
 .mainContainer{
     display: flex;
     justify-content: center;
     height: 100vh;
-}
-
-
-.circle{
-    height: 1rem;
-    width: 1rem;
-    border-radius: 100%;
-    border:solid black;
-    background-color: #1B262C;
-    cursor: pointer;
-}
-
-#DarkTheme{
-    margin-left: 1.7rem;
 }
 
 .theGame{
@@ -125,6 +179,19 @@ body{
     flex-wrap: wrap;
 }
 
+.blank{
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    width: 1rem !important;
+}
+
+.word-block{
+    display: flex;
+    gap:2rem
+}
+
 .box{
     display: flex;
     border: solid 2px black;
@@ -138,17 +205,6 @@ body{
     color: #F0F5F9;
     font-size: 1.5rem;
     font-weight: 600;
-}
-
-.toggle {
-    border: 1px solid #1B262C;
-    display: flex;
-    height: 1rem;
-    width: 3rem;
-    padding: 0.35rem 0.2rem;
-    border-radius: 25px;
-    background-color: hsl(223, 50%, 87%);
-    align-items: center;
 }
 
 .userInput{
@@ -177,68 +233,6 @@ body{
     text-shadow: 1px 2px 3px rgba(12, 12, 12, 0.486)
 }
 
-.EnterBtn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.current {
-    width: 2rem;
-    height: 2rem;
-}
-
-.green{
-    background-color: #17B978;
-}
-.enter{
-    padding: 1rem 4rem;
-    font-size: 28px;
-    font-weight: 600;
-    letter-spacing: .7rem;
-    border-radius: 1px;
-    border: 2px solid black;
-    cursor: pointer;
-    user-select: none;
-    background-color: transparent;
-}
-.enter:hover{
-    background-color: #1B262C;
-    color:#C9D6DF;
-}
-
-
-.wrong{
-    color: #F05454;
-}
-
-.hidden{
-    display: none !important;
-}
-
-.gameWon.show{
-    display: block;
-    color: #03C988;
-    font-size: 6rem;
-}
-
-.gameOver.show{
-    display: block;
-    color: rgb(168, 4, 4);
-    font-size: 6rem;
-}
-
-.default{
-    background-color: rgba(12, 12, 12, 0.397)
-}
-
-.white{
-    background-color:#EEF2FF !important;
-}
-
-.black{
-    background-color: #1B262C;
-}
 
 .warning{
     display: flex;
@@ -256,6 +250,8 @@ body{
     width: 1rem;
     height: 1rem;
 }
+
+/*                     after win or lost              */
 
 .after{
     display: flex;
@@ -295,58 +291,112 @@ body{
     flex-direction: column;
 }
 
-
-.homepage h1{
-    font-size: 7rem;
-    letter-spacing: 1.5rem;
-    margin-top: 0;
-    border: 3px solid black;
-    padding: 1.5rem;
-}
+/*                     hOMEpage            */
 
 .homepage {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-      background:linear-gradient(20deg,#607EAA,#B2C8DF);
+    background-color: #111113;
     height: 100vh;
 }
 
-#play,#challenge{
-    font-size: 3rem;
-    text-decoration: none;
-    color: #ffffff;
+.homepage h1{
+    font-size: 7rem;
+    letter-spacing: 1.2rem;
+    margin-top: 0;
     padding: 1.5rem;
-    border-radius: 10px;
-    background-color:#1B262C;
-    text-align: center;
-    outline: none;
-    border: none;
+    background: #c3073f;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip:none;
+    
 }
 
-#play{
-    width: 10rem;
+.homepage h2{
+    font-size: 3rem;
+    background: #edf5e1;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: none;
+    cursor: pointer;
 }
 
-#challenge{
-    width: 20rem;
+.homepage h2:hover{
+   
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #edf5e1;
 }
 
-#play:hover{
-    background-color: #03C988;
-    letter-spacing: .5rem;
+.rightPage{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 70%;
+    height: 100vh;
+    flex-wrap: wrap;
 }
 
-#challenge:hover{
-    background-color: #F05454;
-    letter-spacing: .5rem;
+.rightPage h3{
+    background: #edf5e1;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: none;
+    position: absolute;
+    left: 0.5rem;
+    font-size: 12px
 }
 
-.movieSection{
+.leftPage{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #1c1c1e;
+    box-shadow: 0 7px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title{
     display: flex;
     align-items: center;
-    gap: 5rem;
+    justify-content: center;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+.text h3{
+    font-size: 18px;
+    background: #edf5e1;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: none;
+}
+    
+
+.homepage span{
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: none;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    height: 50%;
+    border-bottom: 2px solid #edf5e1;
+}
+
+#movie{
+    margin-top: 2rem;
+}
+
+#rules{
+    border-bottom: 0px;
 }
 
 .challengeSection{
@@ -354,17 +404,107 @@ body{
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    flex-direction: column;
 }
 
 .challengeSection input{
-    width: 30rem;
+    width: 25rem;
     border: 0px 0px 2px 0px solid black;
     text-transform: uppercase;
     outline: none;
     border-width: 0 0 2px;
     background: transparent;
-    margin-bottom: -4rem;
-    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     letter-spacing: .1rem;
+    background: #edf5e1;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: none;
+}
+
+.challengeSection input::placeholder{
+    color: #edf5e1 ;
+    font-size: 18px;
+}
+
+
+#play,#challenge{
+    text-decoration: none;
+    background-color: transparent;
+    text-align: center;
+    outline: none;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 600;
+    font-family: Future;
+    padding: 0;
+}
+
+#play{
+    width: 10rem;
+    height: 0rem;
+    margin-top: -5rem;
+}
+
+#challenge{
+    width: 20rem;
+}
+
+
+/*             text positions               */
+
+#bahubali{
+    position: absolute;
+    left: 4rem;
+    top: 16rem;
+}
+
+#october{
+    position: absolute;
+    left: 10rem;
+    top: 24rem;
+}
+
+#lagaan{
+    position: absolute;
+    left: 16rem;
+    top: 16rem;
+}
+
+#ludo{
+    position: absolute;
+    left: 23rem;
+    top: 24rem;
+}
+
+#yuva{
+    position: absolute;
+    left: 27rem;
+    top: 16rem;
+}
+
+#welcome{
+    position:absolute;
+    left: 33rem;
+    top: 24rem;
+}
+
+#om{
+    position: absolute;
+    left: 39rem;
+    top: 16rem;
+}
+
+#omg{
+    position: absolute;
+    left: 47rem;
+    top: 24rem;
+}
+
+#don{
+    position: absolute;
+    left: 58rem;
+    top: 16rem;
 }

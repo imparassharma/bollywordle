@@ -89,7 +89,7 @@ function Homepage(){
     }
 
     const singlePlayer =(event) =>{
-        const singleGame = "SULTAN";
+        const singleGame = "GHAJINI";
         arr= Array.from(singleGame);
         const groupedItemList = [];
         let currentWord = []; // To store letters of the current word

@@ -291,6 +291,26 @@ body{
     flex-direction: column;
 }
 
+.newDiv{
+   width: 100%;
+   height: 50%;
+   background-color: #1c1c1e;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+.newDiv #backbtn{
+    color:#edf5e1; ;
+    position: static;
+    font-size: 4rem;
+}
+.newDiv h2{
+    font-family: Arial, Helvetica, sans-serif;
+    color:white; 
+    margin-bottom: 0;
+}
 /*                     hOMEpage            */
 
 .homepage {

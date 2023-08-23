@@ -112,6 +112,8 @@ function MainSection() {
         console.log("handleClear");
     }
 
+    const isBlock = itemList && itemList.length > 0; 
+
     return(
         <div className="mainContainer" id="mainC">
             <div className="gameOver hidden" id="lost">
@@ -143,10 +145,17 @@ function MainSection() {
                     </h1>
                 </div>
                 <div className="play-section">
-                <div className="block-container" id='blockContainer'>
-                    {itemList}
+                        <div className="block-container" id='blockContainer'>
+                        {isBlock && itemList} 
+                        </div>
                 </div>
+                {!isBlock && itemList.length === 0 && (
+                <div className="newDiv">
+                    <Link id="backbtn" to="/" onClick={handleClear}>BACK</Link>
+                    <h2>MOVIE NAME CANNOT BE EMPTY</h2>
+                    <h2>PLEASE GO BACK TO HOMEPAGE</h2>
                 </div>
+                )}
                 <div className="bottomSection">
                     <div className="userInput">
                         <h1 id="word">ENTER </h1>

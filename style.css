@@ -134,6 +134,7 @@ body{
     flex-direction: column;
     gap: 3rem;
     background:linear-gradient(320deg,#DCD6F7,#DBE2EF);
+    overflow-x: hidden;
 }
 
 .mainContainer{
@@ -701,7 +702,7 @@ body{
     
     .leftPage{
         width: 100%;
-        margin-top: -2rem
+        margin-top: -10rem
     }
 
     .container{

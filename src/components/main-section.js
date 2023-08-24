@@ -30,7 +30,7 @@ function MainSection() {
             const blockContainer = document.getElementById("blockContainer");
             if(theBoxes)
             {
-                lives.style.fontSize = "3.5vw";
+                lives.style.fontSize = "3vw";
                 blockContainer.style.gap = "1vw";
                 enterbtn.style.fontSize = "2vw";
                 theBoxes.forEach(box => {
@@ -64,6 +64,8 @@ function MainSection() {
                     b.style.height = "9vh";
                 })
             }
+            userinput.style.marginTop= "-24rem";
+            userinput.style.marginLeft= "70rem";
         }
     }, []);
 

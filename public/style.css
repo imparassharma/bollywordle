@@ -689,11 +689,11 @@ body{
     }
     
     .chances h1{
-        font-size: 9vw !important;
+        font-size: 7vw !important;
     }
 
     .userInput h1{
-        font-size: 9vw !important;
+        font-size: 7vw !important;
     }
 
     .userInput{
@@ -713,7 +713,7 @@ body{
     }
     
     .main{
-        gap: 8rem;
+        gap: 10vh;
         width: 92vw;
     }
 
@@ -776,6 +776,7 @@ body{
 
     .block-container{
         gap: 2vw !important;
+        width: 99vw;
     }
 
     .chances h1{

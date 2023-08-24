@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { arr, vowelCount, wordCount } from "./Homepage";
 import { Link } from "react-router-dom";
 import warningImg from "../images/warning.png";
-import { itemList, lengthArr } from '../components/Homepage';
+import { itemList, lengthArr ,boxcreated} from '../components/Homepage';
 
 let correctguess = [];
 function MainSection() {
@@ -22,16 +22,48 @@ function MainSection() {
 
     useEffect(() => {
         const chances = document.getElementById("chances");
-
-        if (wordCount > 10 && chances) {
-            chances.style.marginTop = "-2rem";
-            chances.style.padding = "0rem 3rem";
-
-            const boxes = document.querySelectorAll(".box");
-            boxes.forEach(box => {
-                box.style.width = '5rem';
-                box.style.height = '5rem';
-            });
+        console.log(wordCount);
+        if (wordCount >= 12) {
+            const theBoxes = document.querySelectorAll(".word-block");
+            const lives = document.getElementById("lives");
+            const enterbtn = document.getElementById("word");
+            const blockContainer = document.getElementById("blockContainer");
+            if(theBoxes)
+            {
+                lives.style.fontSize = "3.5vw";
+                blockContainer.style.gap = "1vw";
+                enterbtn.style.fontSize = "2vw";
+                theBoxes.forEach(box => {
+                    box.style.width = "98vw";
+                });
+            }
+        }
+        if(boxcreated==2){
+            const userinput = document.getElementById("userinput");
+            userinput.style.marginTop= "-24rem";
+            userinput.style.marginLeft= "70rem";
+        }
+        if(boxcreated==3){
+            const userinput = document.getElementById("userinput");
+            userinput.style.marginTop= "-24rem";
+            userinput.style.marginLeft= "70rem";
+            const theBoxes = document.querySelectorAll(".word-block");
+            const lives = document.getElementById("lives");
+            const enterbtn = document.getElementById("word");
+            const blockContainer = document.getElementById("blockContainer");
+            if(theBoxes)
+            {
+                lives.style.fontSize = "2.5vw";
+                blockContainer.style.gap = "1vw";
+                enterbtn.style.fontSize = "1vw";
+                theBoxes.forEach(box => {
+                    box.style.width = "98vw";
+                });
+                const boxes = document.querySelectorAll(".box");
+                boxes.forEach(b=>{
+                    b.style.height = "9vh";
+                })
+            }
         }
     }, []);
 
@@ -169,7 +201,7 @@ function MainSection() {
                 </div>
                 )}
                 <div className="bottomSection">
-                    <div className="userInput">
+                    <div className="userInput" id="userinput">
                         <h1 id="word">ENTER </h1>
                         <input id="guess" maxLength="1"  value={inputValue} onChange={handleInput} onBlur={handleBlur} onKeyPress={enterKeyPressed}></input>
                     </div>

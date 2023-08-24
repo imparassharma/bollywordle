@@ -14,10 +14,12 @@ let arr =[];
 let inputText = "";
 let wordCount = 0;
 let lengthArr = 0;
+let boxcreated = 0;
 function Homepage(){
     lengthArr = 0;
     itemList=[];
     vowelCount = 0;
+    wordCount =0;
     const [theChallenge,setChallenge] = useState(theName);
     const handleChallenge= (event)=>{
         const movie = document.getElementById("movie");
@@ -28,16 +30,17 @@ function Homepage(){
         const text = document.getElementById("text");
         const bollywood = document.getElementById("bollywood");
         const tag = document.getElementById("tag");
+        const rightPage = document.getElementById("rightpage");
 
         tag.classList.add("hidden");
-        bollywood.style.marginTop = "-35rem";
+        bollywood.style.marginTop = "0rem";
         text.classList.add("hidden");
         movie.classList.add("hidden");
         giveMovie.classList.remove("hidden");
         rules.classList.add("hidden");
         leftpage.classList.add("hidden");
         home.style.flexDirection = "column";
-        giveMovie.style.marginTop = "-30rem";
+        rightPage.style.height = "10vw";
     }
 
 
@@ -60,6 +63,7 @@ function Homepage(){
                 ) 
                 groupedItemList.push(currentWord); // Add the current word to the grouped array
                 currentWord = []; // Start a new word
+                boxcreated++;
             } 
             else if(item==='A'||item==='E'||item==='I'||item==='O'||item==='U'){
                 currentWord.push( 
@@ -82,7 +86,7 @@ function Homepage(){
             groupedItemList.push(currentWord); // Add the last word if it's not empty
         }
         itemList = groupedItemList.map((wordArray, wordIndex) => (
-            <div key={wordIndex} className="word-block">
+            <div key={wordIndex} className="word-block" id="theBoxes">
                 {wordArray}
             </div>
         ));
@@ -118,12 +122,13 @@ function Homepage(){
                 lengthArr++;
             }
         });
-    
+
         if (currentWord.length > 0) {
             groupedItemList.push(currentWord); // Add the last word if it's not empty
         }
+
         itemList = groupedItemList.map((wordArray, wordIndex) => (
-            <div key={wordIndex} className="word-block">
+            <div key={wordIndex} className="word-block" id="theBoxes">
                 {wordArray}
             </div>
         ));
@@ -199,7 +204,7 @@ function Homepage(){
                 <h3 id="tag">@im_pararsharma</h3>
                 <div className="title">
                     <h1 id="bollywood"><span id="B">B</span>OLLYWOOD</h1>
-                    <div className="text" id="text">
+                    <div className="text hidden" id="text">
                         <h3 id="bahubali">BAHUBALI</h3>
                         <h3 id="october">OCTOBER</h3>
                         <h3 id="lagaan">LAGAAN</h3>
@@ -233,6 +238,6 @@ function Homepage(){
 
 export default Homepage;
 export{theName};
-export {itemList, arr, vowelCount, wordCount,lengthArr}
+export {itemList, arr, vowelCount, wordCount,lengthArr ,boxcreated}
 
 

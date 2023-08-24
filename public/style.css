@@ -78,6 +78,7 @@ body{
     align-items: center;
     justify-content: space-between;
     margin: 0rem 0rem 0rem 2rem;
+    width: 100%;
 }
 
 .toggle {
@@ -111,6 +112,7 @@ body{
 }
 
 .history h1{
+    font-size: 3vw;
     margin-bottom: 0;
 }
 
@@ -119,7 +121,7 @@ body{
     align-items: center;
     padding: .5rem;
     height: 2rem;
-    width: 30rem;
+    width: 30vw;
     border: 1px solid black;
     border-radius: 10px;
     font-size: 32px;
@@ -152,16 +154,15 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 2rem;
-    padding: .2rem 3rem;
+    padding: .3vh 3vh;
     color:#1B262C;
 }
 
 .chances h1{
     display: flex;
     flex-direction: row;
-    gap: 3rem;
-    font-size: 4rem;
+    gap: 3vw;
+    font-size: 5vw;
     color:black;
 }
 
@@ -173,9 +174,8 @@ body{
 
 .block-container{
     display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 4rem;
+    gap: 3vw;
     flex-wrap: wrap;
 }
 
@@ -189,14 +189,15 @@ body{
 
 .word-block{
     display: flex;
-    gap:2rem
+    justify-content: center;
+    gap:2vw;
 }
 
 .box{
     display: flex;
     border: solid 2px black;
-    width: 6rem;
-    height: 6rem;
+    width: 6vw;
+    height: 13vh;
     box-shadow: 0px 4px 2px rgba(26, 26, 26, 0.562);
     border: 4px solid rgb(0, 0, 0);
     background-color:#11171aec;
@@ -209,12 +210,16 @@ body{
 
 .userInput{
     border: solid 1px black;
-    padding: 0rem 5rem;
+    padding: 0rem 4vw;
     display: flex;
     gap: 2rem;
     align-items: center;
     justify-content: center;
     letter-spacing: .2rem;
+}
+
+.userInput h1{
+    font-size: 3vw;
 }
 
 .userInput input{
@@ -250,6 +255,7 @@ body{
     width: 1rem;
     height: 1rem;
 }
+
 
 /*                     after win or lost              */
 
@@ -322,10 +328,8 @@ body{
 }
 
 .homepage h1{
-    font-size: 7rem;
+    font-size: 8vw;
     letter-spacing: 1.2rem;
-    margin-top: 0;
-    padding: 1.5rem;
     background: #c3073f;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -333,12 +337,20 @@ body{
 }
 
 .homepage h2{
-    font-size: 3rem;
+    font-size: 7.5vw;
     background: #edf5e1;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: none;
     cursor: pointer;
+}
+
+#play{
+    margin-top: -5rem;
+}
+
+#play h2{
+    margin: 0;
 }
 
 .homepage h2:hover{
@@ -352,9 +364,10 @@ body{
     display: flex;
     align-content: center;
     justify-content: center;
-    width: 70%;
+    width: 70vw;
     height: 100vh;
     flex-wrap: wrap;
+    padding: 1rem;
 }
 
 .rightPage h3{
@@ -370,20 +383,12 @@ body{
 .leftPage{
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 25vw;
     height: 100vh;
     align-items: center;
     justify-content: center;
     border-left: 1px solid #1c1c1e;
     box-shadow: 0 7px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.title{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5rem;
-    width: 100%;
 }
 
 .text h3{
@@ -402,16 +407,8 @@ body{
 }
 
 .container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    height: 50%;
+    padding: 3.5rem 0rem;
     border-bottom: 2px solid #edf5e1;
-}
-
-#movie{
-    margin-top: 2rem;
 }
 
 #rules{
@@ -422,19 +419,19 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
+    gap: 8rem;
     flex-direction: column;
 }
 
 .challengeSection input{
-    width: 25rem;
+    width: 40vw;
     border: 0px 0px 2px 0px solid black;
     text-transform: uppercase;
     outline: none;
     border-width: 0 0 2px;
     background: transparent;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
+    margin-top: 3rem;
+    font-size: 2vw;
     text-align: center;
     letter-spacing: .1rem;
     background: #edf5e1;
@@ -445,7 +442,7 @@ body{
 
 .challengeSection input::placeholder{
     color: #edf5e1 ;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 
@@ -458,17 +455,10 @@ body{
     border: none;
     font-weight: 600;
     font-family: Future;
-    padding: 0;
 }
 
-#play{
-    width: 10rem;
-    height: 0rem;
-    margin-top: -5rem;
-}
-
-#challenge{
-    width: 20rem;
+.container h2{
+    font-size: 3vw;
 }
 
 .ruleSection{
@@ -479,8 +469,8 @@ body{
     background-color: #edf5e1;
     flex-direction: column;
     border-radius: 0px -10px 0px 0px;
-    width: 85%;
-    height: 78%;
+    width: 80vw;
+    height: 80vh;
     padding: 3rem;
     font-family:Arial, Helvetica, sans-serif;
 }
@@ -496,8 +486,8 @@ body{
 }
 
 .row img{
-    height: 5rem;
-    width: 30rem;
+    height: 10vh;
+    width: 32vw;
     padding-top: 1rem;
 }
 
@@ -513,14 +503,14 @@ body{
     -webkit-background-clip: text;
     background-clip: none;
     margin-bottom: 0;
-    font-size: 28px;
+    font-size: 1.7vw;
 }
 
 .col p{
     margin-top: 0;
     margin-bottom: 0;
     text-align: justify;
-    width: 30rem;
+    width: 40vw;
 }
 
 #greenText{
@@ -609,4 +599,191 @@ body{
     position: absolute;
     left: 58rem;
     top: 16rem;
+}
+
+
+@media screen and (max-width:1000px) {
+
+    .homepage h1{
+        letter-spacing: 0.2rem;
+    }
+
+    .container h2{
+        font-size: 3.5vw;
+    }
+
+    .rightPage{
+        width: 60vw;
+    }
+
+    .leftPage{
+        width: 40vw;
+    }
+
+    .challengeSection input::placeholder{
+        font-size: 16px;
+    }
+
+    /*Main...........*/
+    .box{
+        height: 12vh;
+    }
+
+    
+}
+
+@media screen and (max-width:754px) {
+
+    .container h2{
+        font-size: 4.5vw;
+    }
+
+    .challengeSection input{
+        width: 52vw;
+    }
+
+    .challengeSection input::placeholder{
+        font-size: 14px;
+    }
+
+    .row img{
+        height: 7vh;
+    }
+
+    .box{
+        height: 12vh !important;
+        width: 10vw !important;
+    }
+    .history h1{
+        font-size: 6vw;
+    }
+
+    .usedWords{
+        font-size: 44vw;
+        width: 40vw;
+    }
+
+    .block-container{
+        gap: 2vw !important;
+    }
+    
+    .chances h1{
+        font-size: 9vw !important;
+    }
+
+    .userInput h1{
+        font-size: 9vw !important;
+    }
+
+    .userInput{
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+    }
+}
+
+@media screen and (max-width:424px) {
+
+    body{
+        overflow-x: hidden;
+    }
+
+    .main{
+        gap: 8rem;
+    }
+
+    .homepage{
+        flex-direction: column;
+    }
+
+    .rightPage h1{
+        font-size: 11vw;
+    }
+    
+    .leftPage{
+        width: 100%;
+        margin-top: -2rem
+    }
+
+    .container{
+        padding: 1.5rem 0rem;
+        width:70%;
+    }
+
+    .container h2{
+        font-size: 7vw;
+    }
+
+    #play{
+        text-align: left;
+    }
+
+    .col p{
+        font-size: 12px;
+    }
+
+    .row{
+        gap: 1rem;
+    }
+
+    .ruleSection{
+        width: auto;
+        padding: 1.5rem;
+    }
+
+    .close h3{
+        font-size: 4vw;
+        top: -1rem;
+    }
+
+    #tag{
+        display: none;
+    }
+
+    .box{
+        height: 5vh !important;
+        width: 10vw !important;
+    }
+
+    .chances{
+        width: 100%;
+    }
+
+    .block-container{
+        gap: 2vw !important;
+    }
+
+    .chances h1{
+        font-size: 9vw !important;
+    }
+
+    .userInput{
+        width: 93vw;
+    }
+
+    .userInput h1{
+        font-size: 9vw !important;
+    }
+
+    .history h1{
+        font-size: 6vw;
+    }
+
+    .usedWords{
+        font-size: 44vw;
+        width: 40vw;
+    }
+
+    .word-block{
+        justify-content: start;
+    }
+
+    .userInput{
+        margin-top: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .challengeSection input{
+        font-size: 3vw;
+    }
+
 }

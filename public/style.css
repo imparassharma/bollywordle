@@ -37,13 +37,15 @@ body{
 }
 
 .gameWon.show{
-    display: block;
+    display: flex;
+    align-items: center;
     color: #03C988;
     font-size: 6rem;
 }
 
 .gameOver.show{
-    display: block;
+    display: flex;
+    align-items: center;
     color: rgb(168, 4, 4);
     font-size: 6rem;
 }
@@ -124,7 +126,7 @@ body{
     width: 30vw;
     border: 1px solid black;
     border-radius: 10px;
-    font-size: 32px;
+    font-size: 3vw;
     font-weight: 600;
     margin-top: 0;
 }
@@ -273,7 +275,7 @@ body{
 }
 
 .result h2{
-    font-size: 5rem;
+    font-size: 5vw;
     margin: auto 0;
 }
 
@@ -296,6 +298,10 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.result h1{
+    font-size: 15vw;
 }
 
 .newDiv{
@@ -660,7 +666,7 @@ body{
     }
 
     .usedWords{
-        font-size: 44vw;
+        font-size: 5.5vw;
         width: 40vw;
     }
 
@@ -770,7 +776,6 @@ body{
     }
 
     .usedWords{
-        font-size: 44vw;
         width: 40vw;
     }
 

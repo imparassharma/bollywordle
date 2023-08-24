@@ -8,6 +8,7 @@ function TopSection(){
         const usedText = document.getElementById("usedText");
         const DarkTheme = document.getElementById("DarkTheme");
         const LightTheme = document.getElementById("LightTheme");
+        const body = document.getElementById("root");
         usedText.classList.toggle("lightText");
         //usedBar.classList.toggle("light");
         main.classList.toggle("dark");
@@ -15,6 +16,7 @@ function TopSection(){
         //chances.classList.toggle("light");
         DarkTheme.classList.toggle("hidden");   
         LightTheme.classList.toggle("hidden");
+        body.classList.toggle("dark");
     }
 
   

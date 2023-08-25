@@ -40,8 +40,9 @@ body{
 .gameWon.show{
     display: flex;
     align-items: center;
-    color: #03C988;
+    color: #08cd67;
     font-size: 6vw;
+    box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 120px 0 rgba(0, 0, 0, 0.19);
 }
 
 .gameOver.show{
@@ -49,6 +50,7 @@ body{
     align-items: center;
     color: rgb(168, 4, 4);
     font-size: 6vw;
+    box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 120px 0 rgba(0, 0, 0, 0.19);
 }
 
 .default{
@@ -331,6 +333,7 @@ body{
     text-align: center;
     justify-content: center;
     flex-direction: column;
+    box-shadow: 0 7px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .newDiv #backbtn{
@@ -874,5 +877,16 @@ body{
     #playChallenge h2 {
         font-size: 15vw;
         margin: 0;
+    }
+
+    .result h1{
+        font-size: 14vw;
+    }
+
+    .result h2{
+        font-size: 10vw;
+    }
+    .newDiv #backbtn {
+        font-size: 11vw;
     }
 }

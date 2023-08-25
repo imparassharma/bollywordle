@@ -435,7 +435,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8rem;
+    gap: 4rem;
     flex-direction: column;
 }
 
@@ -560,6 +560,26 @@ body{
     padding: 0rem .5rem;
 }
 
+#playChallenge{
+    text-decoration: none;
+}
+
+#playChallenge h2{
+    font-size: 7vw;
+    margin: 0;
+}
+
+
+
+
+.warningHome{
+    margin: 0 auto;
+}
+
+.warningHome p{
+    color: #c3073f;
+    text-align: center;
+}
 
 /*             text positions               */
 
@@ -807,5 +827,8 @@ body{
     .challengeSection input{
         font-size: 3vw;
     }
-
+    #playChallenge h2 {
+        font-size: 15vw;
+        margin: 0;
+    }
 }

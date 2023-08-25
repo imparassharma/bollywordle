@@ -67,7 +67,7 @@ function MainSection() {
             setInputValue("");
             return;
         }
-        updateWarn(Value.includes("a") || Value.includes("e") || Value.includes("i") || Value.includes("o") || Value.includes("u"));
+        updateWarn(Value.includes("a") || Value.includes("e") || Value.includes("i") || Value.includes("o") || Value.includes("u") ||Value.includes("A") || Value.includes("E") || Value.includes("I") || Value.includes("O") || Value.includes("U"));
         setInputValue(Value);
     };
     const enterKeyPressed= (event) =>{

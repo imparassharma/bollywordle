@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { arr, vowelCount, wordCount } from "./Homepage";
+import { arr, vowelCount, wordCount ,singleGame } from "./Homepage";
 import { Link } from "react-router-dom";
 import warningImg from "../images/warning.png";
 import { itemList, lengthArr ,boxcreated} from '../components/Homepage';
-
-let correctguess = [];
+let correct = 0;
 function MainSection() {
     const [inputValue, setInputValue] = useState("");
     const [usedStr, setUsedStr] = useState("");
     const [life, setLife] = useState(9);
-    const [correct,setcorrect] = useState(vowelCount);
     const [warning,updateWarn] = useState(false);
     const [isImage,handleImage] = useState(false);
+    const [correctguess, setCorrectguess] = useState([]);
+    const [answer,setAnswer] = useState([]);
 
     const game = document.getElementById("theGame");
     const won = document.getElementById("won");
@@ -20,9 +20,12 @@ function MainSection() {
     const used = document.getElementById("used");
     const top = document.getElementById("top");
 
+
     useEffect(() => {
+        for(let j=0;j<arr.length;j++){
+            answer.push(arr[j]);
+        }
         const chances = document.getElementById("chances");
-        console.log(wordCount);
         if (wordCount >= 12) {
             const theBoxes = document.querySelectorAll(".word-block");
             const lives = document.getElementById("lives");
@@ -30,7 +33,7 @@ function MainSection() {
             const blockContainer = document.getElementById("blockContainer");
             if(theBoxes)
             {
-                lives.style.fontSize = "3vw";
+                lives.style.fontSize = "3.5vw";
                 blockContainer.style.gap = "1vw";
                 enterbtn.style.fontSize = "2vw";
                 theBoxes.forEach(box => {
@@ -64,9 +67,13 @@ function MainSection() {
                     b.style.height = "9vh";
                 })
             }
-            userinput.style.marginTop= "-24rem";
-            userinput.style.marginLeft= "70rem";
         }
+        setCorrectguess([]);
+    
+        correct=0;
+        const warningImage = new Image();
+        warningImage.src = warningImg;
+        warningImage.onload = isImageLoaded;
     }, []);
 
     const handleBlur = (event) => {
@@ -76,7 +83,6 @@ function MainSection() {
     const handleInput = (event) => {
         const Value = event.target.value;
         if(correctguess.includes(event.target.value.toUpperCase())){
-            console.log("correct guess repeated")
             updateWarn(true);
             setInputValue("");
             return;
@@ -84,35 +90,30 @@ function MainSection() {
         setInputValue(Value);
         updateWarn(Value.includes("a") || Value.includes("e") || Value.includes("i") || Value.includes("o") || Value.includes("u"));
     };
-
     const enterKeyPressed= (event) =>{
+        
         if(event.key==="Enter") //function activated if pressed key is enter
         {
             if(warning===true){
                 return;
             }
-            let updatedCorrect = correct;
             let newCorrectGuess = false;
             for(let i=0;i<arr.length;i++){
-
-                if(arr[i]===Value){ //to check if correct guess is made again so no increment then
+                setAnswer(answer);
+                if(arr[i]===Value){ //to check if correctValue guess is made again so no increment then
                     correctguess.push(Value);
+                    correct++;
                     const element = document.getElementById(i);
-                   updatedCorrect++;
                     newCorrectGuess = true;
-
                     element.innerHTML = Value;
                     element.classList.add("green");
-                    console.log(correct);
-                    console.log(lengthArr);
-                    console.log(arr.length);
-                    if (correct+1 === (lengthArr)) {
+                    arr[i] = null;
+                    if (correct === (lengthArr-vowelCount)) {
                         if (game && won && used && top) {
                             game.className = "theGame hidden";
                             won.className = "gameWon show";
                             used.classList.add("hidden");
                             top.classList.add("hidden");
-                            correctguess = [];
                         }
                     }
                     setInputValue("");  //pushing the index where value is matched
@@ -135,10 +136,7 @@ function MainSection() {
                 over.className = "gameOver show";
                 used.classList.add("hidden");
                 top.classList.add("hidden");
-                correctguess = [];
-            }
-            if (newCorrectGuess) {
-                setcorrect(updatedCorrect); // Only update the correct state if a new correct guess was made
+                setCorrectguess([]);
             }
         }
     }
@@ -147,14 +145,8 @@ function MainSection() {
         handleImage(true);
     };
 
-    useEffect(() => {
-        const warningImage = new Image();
-        warningImage.src = warningImg;
-        warningImage.onload = isImageLoaded;
-    }, []);
-
     const handleClear = (event) => {
-        correctguess = [];
+        setCorrectguess([]);
         console.log("handleClear");
     }
 
@@ -165,14 +157,14 @@ function MainSection() {
             <div className="gameOver hidden" id="lost">
                 <div className="result">
                     <h1>GAME OVER!!</h1>
-                    <h2 id="ans">{arr}</h2>
+                    <h2 id="ans">{answer}</h2>
                 </div>
                 <Link id="backbtn" to="/" onClick={handleClear} >BACK</Link>
             </div>
             <div className="gameWon hidden" id="won">
                 <div className="result">
                     <h1>GAME WON!!</h1>
-                    <h2 id="ans">{arr}</h2>
+                    <h2 id="ans">{answer}</h2>
                 </div>
                 <Link id="backbtn" to="/" onClick={handleClear}>BACK</Link>
             </div>

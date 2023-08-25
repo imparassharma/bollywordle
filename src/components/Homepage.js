@@ -15,6 +15,7 @@ let inputText = "";
 let wordCount = 0;
 let lengthArr = 0;
 let boxcreated = 0;
+let singleGame = "";
 function Homepage(){
     lengthArr = 0;
     itemList=[];
@@ -93,7 +94,7 @@ function Homepage(){
     }
 
     const singlePlayer =(event) =>{
-        const singleGame = "GHAJINI";
+        singleGame = "GHAJINI";
         arr= Array.from(singleGame);
         const groupedItemList = [];
         let currentWord = []; // To store letters of the current word
@@ -238,6 +239,6 @@ function Homepage(){
 
 export default Homepage;
 export{theName};
-export {itemList, arr, vowelCount, wordCount,lengthArr ,boxcreated}
+export {itemList, arr, vowelCount, wordCount,lengthArr ,boxcreated, singleGame}
 
 

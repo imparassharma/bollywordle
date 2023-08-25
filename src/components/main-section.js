@@ -27,7 +27,7 @@ function MainSection() {
         }
 
         console.log(wordCount);
-        if (wordCount >=9 && boxcreated>=2) {
+        if (wordCount >9 && boxcreated>=2) {
             const theBoxes = document.querySelectorAll(".the-box");
             const lives = document.getElementById("lives");
             const enterbtn = document.getElementById("word");

@@ -1,9 +1,10 @@
-@font-face { font-family: Future; src: url('./ELNATH.ttf'); } 
+@font-face { font-family: Homepage; src: url('./ELNATH.ttf'); } 
+@font-face { font-family: Main; src: url('./font1.otf'); } 
 
 body{
     margin: 0;
     padding: 0;
-    font-family: Future;
+    font-family: Main;
     overflow: hidden;
 }
 
@@ -13,7 +14,7 @@ body{
 }
 
 .dark{
-    background:linear-gradient(130deg,#252B48,#445069) !important;
+    background: linear-gradient(60deg, #29323c 0%, #485563 100%) !important;
 }
 
 .light{
@@ -75,10 +76,12 @@ body{
 /*                 Section Heirarchy             */
 
 #root{
-    background:linear-gradient(320deg,#424145,#DBE2EF);
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);    
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
 .topContainer{
@@ -95,9 +98,10 @@ body{
     height: 1rem;
     width: 3rem;
     padding: 0.35rem 0.2rem;
-    border-radius: 25px;
+    border-radius: 10px;
     background-color: hsl(223, 50%, 87%);
     align-items: center;
+    box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 120px 0 rgba(0, 0, 0, 0.19);
 }
 
 .circle{
@@ -120,7 +124,7 @@ body{
 }
 
 .history h1{
-    font-size: 3vw;
+    font-size: 2vw;
     margin-bottom: 0;
 }
 
@@ -131,10 +135,11 @@ body{
     height: 2rem;
     width: 30vw;
     border: 1px solid black;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 3vw;
     font-weight: 600;
     margin-top: 0;
+    box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 120px 0 rgba(0, 0, 0, 0.19);
 }
 
 .main{
@@ -143,10 +148,11 @@ body{
     gap: 3rem;
     overflow: hidden;
     width: 85vw;
-    height: 100vh;
+    height: 95vh;
     box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 30px 0 rgba(0, 0, 0, 0.19);
     border-radius: 15px;
-    background:linear-gradient(320deg,#DCD6F7,#DBE2EF);
+    background-color: #8EC5FC;
+    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);    
 }
 
 
@@ -170,12 +176,14 @@ body{
     justify-content: center;
     padding: .3vh 3vh;
     color:#1B262C;
+    box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 30px 0 rgba(0, 0, 0, 0.19);
 }
 
 .chances h1{
     display: flex;
     flex-direction: row;
     gap: 3vw;
+    padding: 0rem 4rem;
     font-size: 5vw;
     color:black;
 }
@@ -211,8 +219,8 @@ body{
 .box{
     display: flex;
     border: solid 2px black;
-    width: 7vw;
-    height: 15vh;
+    width: 6vw;
+    height: 13.5vh;
     box-shadow: 0px 4px 2px rgba(26, 26, 26, 0.562);
     border: 4px solid rgb(0, 0, 0);
     background-color:#11171aec;
@@ -231,6 +239,7 @@ body{
     align-items: center;
     justify-content: center;
     letter-spacing: .2rem;
+    box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 120px 0 rgba(0, 0, 0, 0.19);
 }
 
 .userInput h1{
@@ -336,6 +345,7 @@ body{
 
 .homepage {
     display: flex;
+    font-family: Homepage !important;
     align-items: center;
     justify-content: center;
     background-color: #111113;
@@ -486,7 +496,6 @@ body{
     text-transform: uppercase;
     border: none;
     font-weight: 600;
-    font-family: Future;
 }
 
 .container h2{
@@ -760,7 +769,10 @@ body{
     .main{
         gap: 10vh;
         width: 92vw;
-        height: 90vh;
+    }
+
+    .history{
+        right: 3rem;
     }
 
     .homepage{

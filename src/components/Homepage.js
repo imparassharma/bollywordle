@@ -232,6 +232,7 @@ function Homepage(){
                 <h3 id="tag">@im_pararsharma</h3>
                 <div className="title">
                     <h1 id="bollywood"><span id="B">B</span>OLLYWOOD</h1>
+                    <p>The BOllywordle Game</p>
                     <div className="text hidden" id="text">
                         <h3 id="bahubali">BAHUBALI</h3>
                         <h3 id="october">OCTOBER</h3>

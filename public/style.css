@@ -352,6 +352,22 @@ body{
     background-clip:none;
 }
 
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title p{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #342d4a;
+    word-spacing: 1rem;
+    margin-top: -5rem;
+    font-size: 1vw;
+    letter-spacing: 1.5rem;
+}
+
 .homepage h2{
     font-size: 7.5vw;
     background: #edf5e1;
@@ -722,6 +738,15 @@ body{
 
     body{
         overflow-x: hidden;
+    }
+
+    .title p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #342d4a;
+        font-size: 3vw;
+        margin: 0;
+        word-spacing: 0;
+        letter-spacing: 0.5rem;
     }
 
     .theGame{

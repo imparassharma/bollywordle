@@ -69,11 +69,7 @@ function MainSection() {
             }
         }
         setCorrectguess([]);
-    
         correct=0;
-        const warningImage = new Image();
-        warningImage.src = warningImg;
-        warningImage.onload = isImageLoaded;
     }, []);
 
     const handleBlur = (event) => {
@@ -81,14 +77,17 @@ function MainSection() {
     };
 
     const handleInput = (event) => {
+        const warningImage = new Image();
+        warningImage.src = warningImg;
+        warningImage.onload = isImageLoaded;
         const Value = event.target.value;
         if(correctguess.includes(event.target.value.toUpperCase())){
             updateWarn(true);
             setInputValue("");
             return;
         }
-        setInputValue(Value);
         updateWarn(Value.includes("a") || Value.includes("e") || Value.includes("i") || Value.includes("o") || Value.includes("u"));
+        setInputValue(Value);
     };
     const enterKeyPressed= (event) =>{
         
@@ -203,7 +202,7 @@ function MainSection() {
                         <div className="warning" id="warn">
                                 <img src={warningImg} onLoad={isImageLoaded}></img>
                                 <h2>Vowels and Same guess cannot be entered!</h2>
-                        </div>}
+                    </div>}
                 </div>
             </div>
         </div>

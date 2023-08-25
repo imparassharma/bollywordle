@@ -72,8 +72,14 @@ body{
 }
 
 
-
 /*                 Section Heirarchy             */
+
+#root{
+    background:linear-gradient(320deg,#424145,#DBE2EF);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .topContainer{
     display: flex;
@@ -135,9 +141,14 @@ body{
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    background:linear-gradient(320deg,#DCD6F7,#DBE2EF);
     overflow: hidden;
+    width: 85vw;
+    height: 100vh;
+    box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 30px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    background:linear-gradient(320deg,#DCD6F7,#DBE2EF);
 }
+
 
 .mainContainer{
     display: flex;
@@ -149,7 +160,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 3vw;
 }
 
 .chances{
@@ -194,13 +205,14 @@ body{
     display: flex;
     justify-content: center;
     gap:2vw;
+    flex-wrap: wrap;
 }
 
 .box{
     display: flex;
     border: solid 2px black;
-    width: 6vw;
-    height: 13vh;
+    width: 7vw;
+    height: 15vh;
     box-shadow: 0px 4px 2px rgba(26, 26, 26, 0.562);
     border: 4px solid rgb(0, 0, 0);
     background-color:#11171aec;
@@ -332,6 +344,7 @@ body{
     justify-content: center;
     background-color: #111113;
     height: 100vh;
+    width: 100vw;
 }
 
 .homepage h1{
@@ -611,6 +624,7 @@ body{
 
 @media screen and (max-width:1000px) {
 
+
     .homepage h1{
         letter-spacing: 0.2rem;
     }
@@ -675,11 +689,11 @@ body{
     }
     
     .chances h1{
-        font-size: 9vw !important;
+        font-size: 7vw !important;
     }
 
     .userInput h1{
-        font-size: 9vw !important;
+        font-size: 7vw !important;
     }
 
     .userInput{
@@ -694,8 +708,13 @@ body{
         overflow-x: hidden;
     }
 
+    .theGame{
+        gap: 10vw;
+    }
+    
     .main{
-        gap: 8rem;
+        gap: 10vh;
+        width: 92vw;
     }
 
     .homepage{
@@ -757,6 +776,7 @@ body{
 
     .block-container{
         gap: 2vw !important;
+        width: 99vw;
     }
 
     .chances h1{

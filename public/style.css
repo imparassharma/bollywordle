@@ -734,10 +734,14 @@ body{
     }
 }
 
-@media screen and (max-width:424px) {
+@media screen and (max-width:450px) {
 
     body{
         overflow-x: hidden;
+    }
+
+    #root{
+        height: 100vh;
     }
 
     .title p {
@@ -756,6 +760,7 @@ body{
     .main{
         gap: 10vh;
         width: 92vw;
+        height: 90vh;
     }
 
     .homepage{

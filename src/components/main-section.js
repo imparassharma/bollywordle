@@ -27,7 +27,7 @@ function MainSection() {
         }
 
         console.log(wordCount);
-        if (wordCount ==10 && boxcreated==2) {
+        if (wordCount >=9 && boxcreated>=2) {
             const theBoxes = document.querySelectorAll(".the-box");
             const lives = document.getElementById("lives");
             const enterbtn = document.getElementById("word");
@@ -36,7 +36,7 @@ function MainSection() {
             {
                 lives.style.fontSize = "3.5vw";
                 blockContainer.style.gap = "1vw";
-                enterbtn.style.fontSize = "2vw";
+                enterbtn.style.fontSize = "1.5vw";
                 theBoxes.forEach(box => {
                     box.style.width = "45vw";
                 });

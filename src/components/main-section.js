@@ -173,7 +173,6 @@ function MainSection() {
                 {!isBlock && itemList.length === 0 && (
                 <div className="newDiv">
                     <Link id="backbtn" to="/" onClick={handleClear}>BACK</Link>
-                    <h2>MOVIE NAME CANNOT BE EMPTY</h2>
                     <h2>PLEASE GO BACK TO HOMEPAGE</h2>
                 </div>
                 )}

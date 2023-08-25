@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/static/js/main.29acb539.js",
-    "static/media/warning.png": "/static/media/warning.48d92c3db392eda919db.png",
-    "static/media/step2.png": "/static/media/step2.2db8abbbda3dff405029.png",
-    "static/media/step5.png": "/static/media/step5.1a050d2cb72ff227ac43.png",
-    "static/media/step1.png": "/static/media/step1.8969225731e54bb05acd.png",
-    "static/media/step6.png": "/static/media/step6.76fcbdc400a932a68862.png",
-    "static/media/step4.png": "/static/media/step4.5ecb5e740f11601bb88f.png",
-    "static/media/step3.png": "/static/media/step3.0129993f35c6edab6ca1.png",
-    "index.html": "/index.html",
-    "main.29acb539.js.map": "/static/js/main.29acb539.js.map"
+    "main.js": "/bollywordle/static/js/main.58f93ade.js",
+    "static/media/warning.png": "/bollywordle/static/media/warning.48d92c3db392eda919db.png",
+    "static/media/step2.png": "/bollywordle/static/media/step2.2db8abbbda3dff405029.png",
+    "static/media/step5.png": "/bollywordle/static/media/step5.1a050d2cb72ff227ac43.png",
+    "static/media/step1.png": "/bollywordle/static/media/step1.8969225731e54bb05acd.png",
+    "static/media/step6.png": "/bollywordle/static/media/step6.76fcbdc400a932a68862.png",
+    "static/media/step4.png": "/bollywordle/static/media/step4.5ecb5e740f11601bb88f.png",
+    "static/media/step3.png": "/bollywordle/static/media/step3.0129993f35c6edab6ca1.png",
+    "index.html": "/bollywordle/index.html",
+    "main.58f93ade.js.map": "/bollywordle/static/js/main.58f93ade.js.map"
   },
   "entrypoints": [
-    "static/js/main.29acb539.js"
+    "static/js/main.58f93ade.js"
   ]
 }

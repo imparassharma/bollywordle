@@ -25,9 +25,10 @@ function MainSection() {
         for(let j=0;j<arr.length;j++){
             answer.push(arr[j]);
         }
-        const chances = document.getElementById("chances");
-        if (wordCount >= 12) {
-            const theBoxes = document.querySelectorAll(".word-block");
+
+        console.log(wordCount);
+        if (wordCount ==10 && boxcreated==2) {
+            const theBoxes = document.querySelectorAll(".the-box");
             const lives = document.getElementById("lives");
             const enterbtn = document.getElementById("word");
             const blockContainer = document.getElementById("blockContainer");
@@ -37,35 +38,15 @@ function MainSection() {
                 blockContainer.style.gap = "1vw";
                 enterbtn.style.fontSize = "2vw";
                 theBoxes.forEach(box => {
-                    box.style.width = "98vw";
+                    box.style.width = "45vw";
                 });
             }
         }
-        if(boxcreated==2){
-            const userinput = document.getElementById("userinput");
-            userinput.style.marginTop= "-24rem";
-            userinput.style.marginLeft= "70rem";
-        }
-        if(boxcreated==3){
-            const userinput = document.getElementById("userinput");
-            userinput.style.marginTop= "-24rem";
-            userinput.style.marginLeft= "70rem";
-            const theBoxes = document.querySelectorAll(".word-block");
-            const lives = document.getElementById("lives");
-            const enterbtn = document.getElementById("word");
-            const blockContainer = document.getElementById("blockContainer");
-            if(theBoxes)
-            {
-                lives.style.fontSize = "2.5vw";
-                blockContainer.style.gap = "1vw";
-                enterbtn.style.fontSize = "1vw";
-                theBoxes.forEach(box => {
-                    box.style.width = "98vw";
-                });
-                const boxes = document.querySelectorAll(".box");
-                boxes.forEach(b=>{
-                    b.style.height = "9vh";
-                })
+
+        if(wordCount>7 && window.innerWidth<400){
+            const howmany = document.getElementById("howmany");
+            if(boxcreated==1){
+                howmany.classList.remove("hidden");
             }
         }
         setCorrectguess([]);
@@ -168,6 +149,9 @@ function MainSection() {
                 <Link id="backbtn" to="/" onClick={handleClear}>BACK</Link>
             </div>
             <div className="theGame" id="theGame">
+                <div className="wordsCount hidden" id="howmany">
+                    <h2>Movie has {boxcreated} word!!</h2>
+                </div>
                 <div className="chances" id="chances">
                     <h1 id="lives">
                         <span id="B">B</span>

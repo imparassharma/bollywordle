@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import step1 from "../images/step1.png";
 import step2 from "../images/step2.png";
 import step3 from "../images/step3.png";
@@ -14,14 +14,24 @@ let arr =[];
 let inputText = "";
 let wordCount = 0;
 let lengthArr = 0;
-let boxcreated = 0;
+let boxcreated = 1;
 let singleGame = "";
+let inputArr = [];
 function Homepage(){
-    lengthArr = 0;
-    itemList=[];
-    vowelCount = 0;
-    wordCount =0;
+
+    useEffect(()=>{
+        lengthArr = 0;
+        itemList=[];
+        vowelCount = 0;
+        wordCount =0;
+    })
+
+
+
+
     const [theChallenge,setChallenge] = useState(theName);
+    const [inputWarn,setinputWarn] = useState(false);
+    
     const handleChallenge= (event)=>{
         const movie = document.getElementById("movie");
         const giveMovie = document.getElementById("giveMovie");
@@ -47,10 +57,25 @@ function Homepage(){
 
     const processInput = (event) =>{
         inputText = event.target.value.toUpperCase();
+        inputArr = Array.from(inputText);
+        let count =0;
+        for(let i=0;i<inputArr.length;i++){
+            if(inputArr[i] ==" "){
+                count =0;
+            }
+            count++;
+            if(window.innerWidth<400 && count>7){
+                setinputWarn(true);
+                event.target.value = "";
+            }
+        }
         setChallenge(inputText);
     }
 
     const processPlay = (event) =>{
+        if(inputWarn==true){
+            return;
+        }
         console.log("multiplayer");
         setChallenge(inputText);
         arr = Array.from(theChallenge);
@@ -107,6 +132,7 @@ function Homepage(){
                 ) 
                 groupedItemList.push(currentWord); // Add the current word to the grouped array
                 currentWord = []; // Start a new word
+                boxcreated++;
             } 
             else if(item==='A'||item==='E'||item==='I'||item==='O'||item==='U'){
                 currentWord.push( 
@@ -232,8 +258,16 @@ function Homepage(){
             </div>
             <div className="challengeSection hidden" id="giveMovie">
                 <input id="movieName" onChange={processInput} autoComplete="off" placeholder="Enter Movie Name"></input>
-                <Link id="play" to="/main" onClick={processPlay}><h2>Play</h2></Link>
+                <Link id="playChallenge" to="/main" onClick={processPlay}><h2>Play</h2></Link>
+                {inputWarn && 
+                        <div className="warningHome" id="warnHome">
+                                <p>The mobile version of this game don't support 7 letter entered without space! Try entering some other movie name!</p>
+                                <p>Example:-</p>
+                                <p>Adipurush: invalid</p>
+                                <p>MY NAME IS KHAN: valid</p>
+                    </div>}
             </div>
+            
         </div>
     )
 }

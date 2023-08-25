@@ -64,58 +64,70 @@ function Homepage(){
                 count =0;
             }
             count++;
-            if(window.innerWidth<400 && count>7){
+            if(window.innerWidth<450 && count>7){
                 setinputWarn(true);
                 event.target.value = "";
+                console.log("warned");
+            }
+            else{
+                setinputWarn(false);
             }
         }
+        console.log(inputText);
+        console.log(inputWarn);
         setChallenge(inputText);
     }
 
     const processPlay = (event) =>{
         if(inputWarn==true){
+            setinputWarn(false);
             return;
+            console.log("warned");
         }
-        console.log("multiplayer");
-        setChallenge(inputText);
-        arr = Array.from(theChallenge);
-        const groupedItemList = [];
-        let currentWord = []; // To store letters of the current word
-    
-        arr.forEach((item, index) => {
-            if (item === ' ') {
-                currentWord.push( 
-                    <div className='box blank'></div>
-                ) 
-                groupedItemList.push(currentWord); // Add the current word to the grouped array
-                currentWord = []; // Start a new word
-                boxcreated++;
-            } 
-            else if(item==='A'||item==='E'||item==='I'||item==='O'||item==='U'){
-                currentWord.push( 
-                    <div className='box default' id={index}>{item}</div>
-                ) 
-                vowelCount++;
-                wordCount++;
-                lengthArr++;
-            }   
-            else {
-                currentWord.push(
-                    <div className='box' id={index}></div>
-                );
-                wordCount++;
-                lengthArr++;
+        else{
+            console.log("herere");
+            setChallenge(inputText);
+            console.log("multiplayer");
+            arr = Array.from(theChallenge);
+            const groupedItemList = [];
+            let currentWord = []; // To store letters of the current word
+        
+            arr.forEach((item, index) => {
+                if (item === ' ') {
+                    currentWord.push( 
+                        <div className='box blank'></div>
+                    ) 
+                    groupedItemList.push(currentWord); // Add the current word to the grouped array
+                    currentWord = []; // Start a new word
+                    boxcreated++;
+                } 
+                else if(item==='A'||item==='E'||item==='I'||item==='O'||item==='U'){
+                    currentWord.push( 
+                        <div className='box default' id={index}>{item}</div>
+                    ) 
+                    vowelCount++;
+                    wordCount++;
+                    lengthArr++;
+                }   
+                else {
+                    currentWord.push(
+                        <div className='box' id={index}></div>
+                    );
+                    wordCount++;
+                    lengthArr++;
+                }
+            });
+        
+            if (currentWord.length > 0) {
+                groupedItemList.push(currentWord); // Add the last word if it's not empty
             }
-        });
-    
-        if (currentWord.length > 0) {
-            groupedItemList.push(currentWord); // Add the last word if it's not empty
+            itemList = groupedItemList.map((wordArray, wordIndex) => (
+                <div key={wordIndex} className="word-block" id="theBoxes">
+                    {wordArray}
+                </div>
+            ));
         }
-        itemList = groupedItemList.map((wordArray, wordIndex) => (
-            <div key={wordIndex} className="word-block" id="theBoxes">
-                {wordArray}
-            </div>
-        ));
+
     }
 
     const singlePlayer =(event) =>{

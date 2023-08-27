@@ -91,7 +91,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0rem 0rem 0rem 2rem;
+    margin: 2rem 0rem 0rem 1.5rem;
     width: 100%;
 }
 
@@ -137,6 +137,7 @@ body{
     padding: .5rem;
     height: 2rem;
     width: 30vw;
+    background-color:#5c76712a;
     border: 1px solid black;
     border-radius: 5px;
     font-size: 3vw;
@@ -372,6 +373,9 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+position:absolute;
+top:5rem;
+left:25rem;
 }
 
 .title p{
@@ -466,7 +470,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
+    gap: 2rem;
     flex-direction: column;
 }
 
@@ -603,7 +607,7 @@ body{
 
 
 .warningHome{
-    margin: 0 auto;
+    margin-top: 2rem;
 }
 
 .warningHome p{
@@ -889,4 +893,10 @@ body{
     .newDiv #backbtn {
         font-size: 11vw;
     }
+
+    .topContainer{
+        margin: 2rem 0rem 0rem 2rem;
+    }
+
+    
 }

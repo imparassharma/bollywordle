@@ -24,6 +24,8 @@ function Homepage(){
         itemList=[];
         vowelCount = 0;
         wordCount =0;
+        const body = document.getElementById("root");
+        body.classList.remove("dark");
     })
 
 

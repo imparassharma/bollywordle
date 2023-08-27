@@ -132,7 +132,7 @@ function Homepage(){
 
     const singlePlayer =(event) =>{
         console.log("singlePlayer");
-        singleGame = "HERA PHERI";
+        singleGame = "DANGAL";
         arr= Array.from(singleGame);
         const groupedItemList = [];
         let currentWord = []; // To store letters of the current word
@@ -270,15 +270,15 @@ function Homepage(){
                 </div>
             </div>
             <div className="challengeSection hidden" id="giveMovie">
-                <input id="movieName" onChange={processInput} autoComplete="off" placeholder="Enter Movie Name"></input>
-                <Link id="playChallenge" to="/main" onClick={processPlay}><h2>Play</h2></Link>
-                {inputWarn && 
+            {inputWarn && 
                         <div className="warningHome" id="warnHome">
                                 <p>The mobile version of this game don't support 7 letter entered without space! Try entering some other movie name!</p>
                                 <p>Example:-</p>
                                 <p>Adipurush: invalid</p>
                                 <p>MY NAME IS KHAN: valid</p>
                     </div>}
+                <input id="movieName" onChange={processInput} autoComplete="off" placeholder="Enter Movie Name"></input>
+                <Link id="playChallenge" to="/main" onClick={processPlay}><h2>Play</h2></Link>
             </div>
             
         </div>

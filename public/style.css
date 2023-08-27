@@ -373,6 +373,9 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+position:absolute;
+top:5rem;
+left:25rem;
 }
 
 .title p{

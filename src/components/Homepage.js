@@ -134,7 +134,7 @@ function Homepage(){
 
     const singlePlayer =(event) =>{
         console.log("singlePlayer");
-        singleGame = "MAIN HOON NA";
+        singleGame = "TAMASHA";
         arr= Array.from(singleGame);
         const groupedItemList = [];
         let currentWord = []; // To store letters of the current word

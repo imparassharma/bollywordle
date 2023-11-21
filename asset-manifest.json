@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/bollywordle/static/js/main.a4a94cee.js",
+    "main.js": "/bollywordle/static/js/main.4589efdd.js",
     "static/media/warning.png": "/bollywordle/static/media/warning.48d92c3db392eda919db.png",
     "static/media/step2.png": "/bollywordle/static/media/step2.2db8abbbda3dff405029.png",
     "static/media/step5.png": "/bollywordle/static/media/step5.1a050d2cb72ff227ac43.png",
@@ -9,9 +9,9 @@
     "static/media/step4.png": "/bollywordle/static/media/step4.5ecb5e740f11601bb88f.png",
     "static/media/step3.png": "/bollywordle/static/media/step3.0129993f35c6edab6ca1.png",
     "index.html": "/bollywordle/index.html",
-    "main.a4a94cee.js.map": "/bollywordle/static/js/main.a4a94cee.js.map"
+    "main.4589efdd.js.map": "/bollywordle/static/js/main.4589efdd.js.map"
   },
   "entrypoints": [
-    "static/js/main.a4a94cee.js"
+    "static/js/main.4589efdd.js"
   ]
 }

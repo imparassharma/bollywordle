@@ -40,10 +40,10 @@ function Main(){
         const DarkTheme = darkthemeRef.current;
         const LightTheme = lightthemeRef.current;
         const togglebtn = togglebuttonRef.current;
-
+        const enterbtn = enterBtnRef.current;
 
         main.classList.toggle("dark");
-        word.classList.toggle("lightText");
+        enterbtn.classList.toggle("lightText");
         DarkTheme.classList.toggle("hidden");
         LightTheme.classList.toggle("hidden");
         body.classList.toggle("dark");
@@ -168,13 +168,19 @@ function Main(){
     
     return(
         <div className='main' ref={mainRef}>
-
+            
+            {!isBlock && itemList.length === 0 && (
+                            <div className="newDiv">
+                                <Link id="backbtn" to="/" onClick={handleClear}>BACK</Link>
+                                <h2>PLEASE GO BACK TO HOMEPAGE</h2>
+                            </div>
+            )}
             {/********************* Top Section********************* */}
 
             <div className="topContainer" ref={topRef}>
                 <div className="toggle" ref={togglebuttonRef}>
-                    <div className="circle" onClick={handleTheme} ref={lightthemeRef}></div>
-                    <div className="circle hidden"  onClick={handleTheme} ref={darkthemeRef}></div>
+                    <div className="circle1 circle" onClick={handleTheme} ref={lightthemeRef}></div>
+                    <div className="circle2 circle hidden"  onClick={handleTheme} ref={darkthemeRef}></div>
                 </div>
                 <div className="history" id="used">
                     <div className="usedWords" ref={usedRef}></div>
@@ -199,40 +205,35 @@ function Main(){
                     <Link id="backbtn" to="/" onClick={handleClear}>BACK</Link>
                 </div>
                 <div className="theGame" ref={gameRef}>
-                    <div className="wordsCount hidden" id="howmany" ref={howManyRef}>
-                        <h2>Movie has {boxcreated} word!!</h2>
-                    </div>
-                    <div className="chances">
-
-                            <h1 ref={livesRef}>
-                                <span id="B">B</span>
-                                <span id="O">O</span>
-                                <span id="L">L</span>
-                                <span id="L">L</span>
-                                <span id="Y">Y</span>
-                                <span id="W">W</span>
-                                <span id="O">O</span>
-                                <span id="O">O</span>
-                                <span id="D">D</span>
-                            </h1>
-                    </div>
-                    <div className="play-section">
-                        <div className="block-container" id='blockContainer' ref={blockContainerRef}>
-                            {isBlock && itemList}
+                    <div className="gaming-section">
+                        <div className="wordsCount hidden" id="howmany" ref={howManyRef}>
+                            <h2>Movie has {boxcreated} word!!</h2>
+                        </div>
+                        <div className="chances">
+                                <h1 ref={livesRef}>
+                                    <span id="B">B</span>
+                                    <span id="O">O</span>
+                                    <span id="L">L</span>
+                                    <span id="L">L</span>
+                                    <span id="Y">Y</span>
+                                    <span id="W">W</span>
+                                    <span id="O">O</span>
+                                    <span id="O">O</span>
+                                    <span id="D">D</span>
+                                </h1>
+                        </div>
+                        <div className="play-section">
+                            <div className="block-container" id='blockContainer' ref={blockContainerRef}>
+                                {isBlock && itemList}
+                            </div>
                         </div>
                     </div>
-                    {!isBlock && itemList.length === 0 && (
-                        <div className="newDiv">
-                            <Link id="backbtn" to="/" onClick={handleClear}>BACK</Link>
-                            <h2>PLEASE GO BACK TO HOMEPAGE</h2>
-                        </div>
-                    )}
                     
                     {/********************* Bottom Section********************* */}
 
                     <div className="bottomSection">
                         <div className="userInput" id="userinput">
-                            <h1 ref={wordRef}>ENTER </h1>
+                            <h1 ref={enterBtnRef}>ENTER </h1>
                             <input id="guess" maxLength="1" value={inputValue} onChange={handleInput} onBlur={handleBlur} onKeyPress={enterKeyPressed}></input>
                         </div>
                         {warning && isImage && (

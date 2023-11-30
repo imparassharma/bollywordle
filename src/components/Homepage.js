@@ -290,5 +290,3 @@ function Homepage(){
 export default Homepage;
 export{theName};
 export {itemList, arr, vowelCount, wordCount,lengthArr ,boxcreated, singleGame}
-
-

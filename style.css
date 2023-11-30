@@ -78,12 +78,11 @@ body{
 /*                 Section Heirarchy             */
 
 #root{
-    background-color: #21D4FD;
-    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);    
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: #3f2d60;
 }
 
 .topContainer{
@@ -101,9 +100,10 @@ body{
     width: 3rem;
     padding: 0.35rem 0.2rem;
     border-radius: 10px;
-    background-color: hsl(223, 50%, 87%);
+    background-color: #8d78b378;
     align-items: center;
     box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 120px 0 rgba(0, 0, 0, 0.19);
+    position: relative;
 }
 
 .circle{
@@ -113,6 +113,11 @@ body{
     border:solid black;
     background-color: #1B262C;
     cursor: pointer;
+}
+
+.circle2{
+    position: absolute;
+    right: .3rem;
 }
 
 .history{
@@ -154,7 +159,7 @@ body{
     box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 30px 0 rgba(0, 0, 0, 0.19);
     border-radius: 15px;
     background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);    
+    background-image: linear-gradient(to right, #9d81f2, #93afdd); 
 }
 
 
@@ -162,6 +167,14 @@ body{
     display: flex;
     justify-content: center;
     height: 100vh;
+}
+
+.gaming-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
 }
 
 .theGame{
@@ -256,8 +269,10 @@ body{
     font-weight: 700;
     text-indent: 35%;
     outline: 0px;
-    border-width: 0 0 2px;
-    border: 0px 0px 2px 0px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 3px solid black;
     text-transform: uppercase;
     background-color: transparent;
     color: rgb(0, 0, 0);
@@ -324,12 +339,14 @@ body{
 }
 
 .newDiv {
-    width: 93vw;
-    height: 40%;
-    background-color: #1c1c1e;
+    width: 85%;
+    border-radius: 15px;
+    height: 95%;
+    background-color: #8983b1;
     position: absolute;
     display: flex;
     text-align: center;
+    padding: 10re;
     justify-content: center;
     flex-direction: column;
     box-shadow: 0 7px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -757,6 +774,10 @@ body{
         height: 100vh;
     }
 
+    .newDiv{
+        width: 92%;
+    }
+
     .title p {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         color: #342d4a;
@@ -773,6 +794,8 @@ body{
     .main{
         gap: 10vh;
         width: 92vw;
+        height: 92vh;
+        border: 4px solid black;
     }
 
     .history{

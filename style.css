@@ -42,7 +42,7 @@ body{
     align-items: center;
     color: #08cd67;
     font-size: 6vw;
-    box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 120px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .gameOver.show{
@@ -50,7 +50,6 @@ body{
     align-items: center;
     color: rgb(168, 4, 4);
     font-size: 6vw;
-    box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 120px 0 rgba(0, 0, 0, 0.19);
 }
 
 .default{
@@ -137,13 +136,12 @@ body{
     padding: .5rem;
     height: 2rem;
     width: 30vw;
-    background-color:#5c76712a;
-    border: 1px solid black;
+    background-color:transparent;
+    border: 3px solid black;
     border-radius: 5px;
     font-size: 3vw;
     font-weight: 600;
     margin-top: 0;
-    box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 120px 0 rgba(0, 0, 0, 0.19);
 }
 
 .main{
@@ -174,7 +172,7 @@ body{
 }
 
 .chances{
-    border: solid 1px black;
+    border: solid 3px black;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -236,7 +234,7 @@ body{
 }
 
 .userInput{
-    border: solid 1px black;
+    border: solid 3px black;
     padding: 0rem 4vw;
     display: flex;
     gap: 2rem;
@@ -769,7 +767,7 @@ body{
     }
 
     .theGame{
-        gap: 10vw;
+        gap: 15vw;
     }
     
     .main{

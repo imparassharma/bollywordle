@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { arr, vowelCount, wordCount, singleGame } from "./Homepage";
+import { arr, vowelCount, wordCount} from "./Homepage";
 import { Link } from "react-router-dom";
 import warningImg from "../images/warning.png";
 import { itemList, lengthArr ,boxcreated} from '../components/Homepage';
@@ -24,7 +24,6 @@ function Main(){
     const blockContainerRef = useRef(null);
     const howManyRef = useRef(null);
     const enterBtnRef = useRef(null);
-    const wordRef = useRef(null);
     const darkthemeRef = useRef(null);
     const lightthemeRef = useRef(null);
     const mainRef = useRef(null);
@@ -53,7 +52,7 @@ function Main(){
 
     /*Main Game Maniplulation*/
 
-    useEffect(() => {
+    useEffect((answer) => {
         for (let j = 0; j < arr.length; j++) {
             answer.push(arr[j]);
         }
@@ -63,7 +62,6 @@ function Main(){
             const theBoxes = document.querySelectorAll(".the-box");
             const lives = livesRef.current;
             const enterbtn = enterBtnRef.current;
-            const blockContainer = blockContainerRef.current;
                 lives.style.fontSize = "2.5vw";
                 enterbtn.style.fontSize = "1.5vw";
                 theBoxes.forEach(box => {

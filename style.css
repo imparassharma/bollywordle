@@ -7,9 +7,14 @@
 
 body{
     margin: 0;
-    padding: 0;
     font-family: Main;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3f2d60;
+    height: 100vh;
+    width: 100vw;
 }
 
 /* color schemes & themes */
@@ -44,16 +49,25 @@ body{
 .gameWon.show{
     display: flex;
     align-items: center;
-    color: #08cd67;
+    flex-direction: column;
+    color: #046935;
     font-size: 6vw;
+}
 
+.gameWon #backbtn{
+    color: white;
 }
 
 .gameOver.show{
     display: flex;
     align-items: center;
-    color: rgb(168, 4, 4);
+    flex-direction: column;
+    color: rgb(176, 23, 23);
     font-size: 6vw;
+}
+
+.gameOver #backbtn{
+    color: white;
 }
 
 .default{
@@ -81,14 +95,6 @@ body{
 
 /*                 Section Heirarchy             */
 
-#root{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #3f2d60;
-}
-
 .topContainer{
     display: flex;
     align-items: center;
@@ -102,7 +108,7 @@ body{
     display: flex;
     height: 1rem;
     width: 3rem;
-    padding: 0.35rem 0.2rem;
+    padding: 1rem 0.5rem;
     border-radius: 10px;
     background-color: #8d78b378;
     align-items: center;
@@ -142,8 +148,8 @@ body{
 .usedWords{
     display: flex;
     align-items: center;
-    padding: .5rem;
-    height: 2rem;
+    padding: 1.5rem;
+    max-height: 1.5rem;
     width: 30vw;
     background-color:transparent;
     border: 3px solid black;
@@ -156,10 +162,9 @@ body{
 .main{
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    overflow: hidden;
+    gap: 1.5rem;
     width: 85vw;
-    height: 95vh;
+    max-height: 95vh;
     box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 30px 0 rgba(0, 0, 0, 0.19);
     border-radius: 15px;
     background-color: #8EC5FC;
@@ -170,7 +175,7 @@ body{
 .mainContainer{
     display: flex;
     justify-content: center;
-    height: 100vh;
+    padding: 2rem;
 }
 
 .gaming-section{
@@ -189,13 +194,14 @@ body{
 }
 
 .chances{
+    width: 82%;
     border: solid 3px black;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: .3vh 3vh;
     color:#1B262C;
     box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 30px 0 rgba(0, 0, 0, 0.19);
+    padding: 0rem 5rem;
 }
 
 .chances h1{
@@ -203,7 +209,7 @@ body{
     flex-direction: row;
     gap: 3vw;
     padding: 0rem 4rem;
-    font-size: 5vw;
+    font-size: 3vw;
     color:black;
 }
 
@@ -216,7 +222,7 @@ body{
 .block-container{
     display: flex;
     justify-content: center;
-    gap: 5vw;
+    gap: 4vw;
     flex-wrap: wrap;
 }
 
@@ -231,15 +237,15 @@ body{
 .word-block{
     display: flex;
     justify-content: center;
-    gap:2vw;
+    gap:1vw;
     flex-wrap: wrap;
 }
 
 .box{
     display: flex;
     border: solid 2px black;
-    width: 6vw;
-    height: 13.5vh;
+    padding: 2rem 3rem;
+    width: 5vw;
     box-shadow: 0px 4px 2px rgba(26, 26, 26, 0.562);
     border: 4px solid rgb(0, 0, 0);
     background-color:#11171aec;
@@ -252,7 +258,7 @@ body{
 
 .userInput{
     border: solid 3px black;
-    padding: 0rem 4vw;
+    padding: 1rem 4vw;
     display: flex;
     gap: 2rem;
     align-items: center;
@@ -263,11 +269,11 @@ body{
 
 .userInput h1{
     font-size: 3vw;
+    margin: 0;
 }
 
 .userInput input{
     font-family: 'Barlow Semi Condensed', sans-serif;
-    height: 3rem;
     width: 5rem;
     font-size: 36px;
     font-weight: 700;
@@ -321,15 +327,6 @@ body{
     margin: auto 0;
 }
 
-#backbtn{
-    font-size: 2rem;
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    text-decoration: none;
-    color: black;
-    cursor: pointer;
-}
 
 #backbtn:hover{
     font-weight: 600;
@@ -345,20 +342,19 @@ body{
 .newDiv {
     width: 85%;
     border-radius: 15px;
-    height: 95%;
+    padding: 15rem 0rem;
     background-color: #8983b1;
     position: absolute;
     display: flex;
     text-align: center;
-    padding: 10re;
     justify-content: center;
     flex-direction: column;
     box-shadow: 0 7px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 1;
 }
 
 .newDiv #backbtn{
-    color:#edf5e1; ;
-    position: static;
+    color:#edf5e1;
     font-size: 4vw;
 }
 .newDiv h2{
@@ -690,6 +686,13 @@ body{
 
 @media screen and (max-width:1000px) {
 
+    .main{
+        padding: 10rem 1rem;
+    }
+
+    .mainContainer{
+        padding: 4rem 0rem
+    }
 
     .homepage h1{
         letter-spacing: 0.2rem;
@@ -711,9 +714,17 @@ body{
         font-size: 16px;
     }
 
+    .chances{
+        padding: 1rem 3rem;
+    }
+
+    .userInput{
+        padding: 1rem 3rem;
+    }
+
     /*Main...........*/
     .box{
-        height: 12vh;
+        padding: 1rem 2rem;
     }
 
     .block-container{
@@ -723,69 +734,12 @@ body{
     
 }
 
-@media screen and (max-width:754px) {
 
-    .container h2{
-        font-size: 4.5vw;
-    }
-
-    
-
-    .challengeSection input{
-        width: 52vw;
-    }
-
-    .challengeSection input::placeholder{
-        font-size: 14px;
-    }
-
-    .row img{
-        height: 7vh;
-    }
-
-    .box{
-        height: 12vh !important;
-        width: 10vw !important;
-    }
-    .history h1{
-        font-size: 6vw;
-    }
-
-    .usedWords{
-        font-size: 5.5vw;
-        width: 40vw;
-    }
-
-    .block-container{
-        gap: 8vw !important;
-    }
-    
-    .chances h1{
-        font-size: 7vw !important;
-    }
-
-    .userInput h1{
-        font-size: 7vw !important;
-    }
-
-    .userInput{
-        margin-top: 0 !important;
-        margin-left: 0 !important;
-    }
-}
 
 @media screen and (max-width:450px) {
 
     body{
         overflow-x: hidden;
-    }
-
-    #root{
-        height: 100vh;
-    }
-
-    .newDiv{
-        width: 92%;
     }
 
     .title p {
@@ -798,14 +752,17 @@ body{
     }
 
     .theGame{
-        gap: 15vw;
+        gap: 10vw;
     }
     
     .main{
-        gap: 10vh;
-        width: 92vw;
-        height: 92vh;
+        width: 90vw;
+        padding: 4rem 0rem;
         border: 4px solid black;
+    }
+
+    .mainContainer{
+        padding: 2rem 0rem;
     }
 
     .history{
@@ -861,25 +818,20 @@ body{
     }
 
     .box{
-        height: 5vh !important;
-        width: 10vw !important;
+        padding: 0.2rem 1rem;
     }
 
     .chances{
-        width: 100%;
+        padding: 0rem ;
     }
 
     .block-container{
         gap: 8vw !important;
-        width: 99vw;
+        padding: 2rem 0rem;
     }
 
     .chances h1{
         font-size: 9vw !important;
-    }
-
-    .userInput{
-        width: 93vw;
     }
 
     .userInput h1{
@@ -896,11 +848,13 @@ body{
 
     .word-block{
         justify-content: start;
+        gap: 1vw;
     }
 
     .userInput{
         margin-top: 0 !important;
         margin-left: 0 !important;
+        padding: 1rem 3rem;
     }
 
     .challengeSection input{
@@ -909,6 +863,10 @@ body{
     #playChallenge h2 {
         font-size: 15vw;
         margin: 0;
+    }
+
+    .result{
+        padding: 10rem 0rem;
     }
 
     .result h1{
@@ -926,5 +884,11 @@ body{
         margin: 2rem 0rem 0rem 2rem;
     }
 
+    .newDiv{
+        width: 100%;
+        left: 0;
+        top: 0;
+        padding: 30rem 0rem;
+    }
     
 }

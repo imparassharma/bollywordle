@@ -159,7 +159,7 @@ function Main(){
     
     return(
         <div className='main' ref={mainRef}>
-            
+            <span id="--reflect"></span>
             {!isBlock && itemList.length === 0 && (
                             <div className="newDiv">
                                 <Link id="backbtn" to="/" onClick={handleClear}>BACK</Link>

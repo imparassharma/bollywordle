@@ -165,12 +165,32 @@ body{
     gap: 1.5rem;
     width: 85vw;
     max-height: 95vh;
-    box-shadow: 0 17px 19px 0 rgba(0, 0, 0, 0.2), 0 16px 30px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 2px 3px rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     background-color: #8EC5FC;
     background-image: linear-gradient(to right, #9d81f2, #93afdd); 
+    overflow: hidden;
+    position: relative;
 }
 
+#--reflect{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    left: -110%;
+    transition: 0.8s;
+    transform: skewX(20deg);
+    background-color: rgba(245, 238, 238, 0.355);
+    z-index: 1;
+}
+
+.main:hover #--reflect{
+    left: 110%;
+}
+
+.main:hover{
+    box-shadow: 0 30px 35px rgba(0,0,0,0.7);
+}
 
 .mainContainer{
     display: flex;
@@ -286,7 +306,8 @@ body{
     text-transform: uppercase;
     background-color: transparent;
     color: rgb(0, 0, 0);
-    text-shadow: 1px 2px 3px rgba(12, 12, 12, 0.486)
+    text-shadow: 1px 2px 3px rgba(12, 12, 12, 0.486);
+    z-index: 2;
 }
 
 
@@ -340,7 +361,7 @@ body{
 }
 
 .newDiv {
-    width: 85%;
+    width: 100%;
     border-radius: 15px;
     padding: 15rem 0rem;
     background-color: #8983b1;
@@ -350,7 +371,7 @@ body{
     justify-content: center;
     flex-direction: column;
     box-shadow: 0 7px 9px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    z-index: 1;
+    z-index: 3;
 }
 
 .newDiv #backbtn{
@@ -724,7 +745,7 @@ body{
 
     /*Main...........*/
     .box{
-        padding: 1rem 2rem;
+        padding: 0.8rem 1.8rem;
     }
 
     .block-container{
@@ -818,10 +839,11 @@ body{
     }
 
     .box{
-        padding: 0.2rem 1rem;
+        padding: 0.5rem 1.2rem;
     }
 
     .chances{
+        width: 100%;
         padding: 0rem ;
     }
 
@@ -889,6 +911,10 @@ body{
         left: 0;
         top: 0;
         padding: 30rem 0rem;
+    }
+
+    .gaming-section{
+        width: 100%;
     }
     
 }

@@ -33,7 +33,7 @@ function Main(){
    
     /*TopSection Manipulation*/
     const handleTheme = (e) => {
-        const body = document.getElementById("root");
+        const body = document.getElementById("body");
         const lives = livesRef.current;
         const main = mainRef.current;
         const DarkTheme = darkthemeRef.current;

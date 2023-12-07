@@ -759,6 +759,10 @@ body{
 
 @media screen and (max-width:450px) {
 
+    body{
+        overflow-y: scroll;
+    }
+
     .title p {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         color: #342d4a;
@@ -852,7 +856,7 @@ body{
         font-size: 9vw !important;
     }
 
-    .bottom-section{
+    .bottomSection{
         width: 100%;
     }
 

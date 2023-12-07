@@ -52,7 +52,7 @@ function Main(){
 
     /*Main Game Maniplulation*/
 
-    useEffect((answer) => {
+    useEffect(() => {
         for (let j = 0; j < arr.length; j++) {
             answer.push(arr[j]);
         }

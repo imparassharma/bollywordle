@@ -35,7 +35,6 @@ function Main(){
     const handleTheme = (e) => {
         const body = document.getElementById("root");
         const lives = livesRef.current;
-        const word = wordRef.current;
         const main = mainRef.current;
         const DarkTheme = darkthemeRef.current;
         const LightTheme = lightthemeRef.current;
@@ -59,14 +58,13 @@ function Main(){
             answer.push(arr[j]);
         }
 
-        if (wordCount > 9 && boxcreated >= 2) {
+        if (wordCount > 9 && boxcreated >= 3) {
             console.log('here buddy');
             const theBoxes = document.querySelectorAll(".the-box");
             const lives = livesRef.current;
             const enterbtn = enterBtnRef.current;
             const blockContainer = blockContainerRef.current;
-                lives.style.fontSize = "3.5vw";
-                blockContainer.style.gap = "3vw";
+                lives.style.fontSize = "2.5vw";
                 enterbtn.style.fontSize = "1.5vw";
                 theBoxes.forEach(box => {
                     box.style.width = "45vw";

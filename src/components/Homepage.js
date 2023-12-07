@@ -62,7 +62,7 @@ function Homepage(){
         inputArr = Array.from(inputText);
         let count =0;
         for(let i=0;i<inputArr.length;i++){
-            if(inputArr[i] ==" "){
+            if(inputArr[i] ===" "){
                 count =0;
             }
             count++;
@@ -81,10 +81,9 @@ function Homepage(){
     }
 
     const processPlay = (event) =>{
-        if(inputWarn==true){
+        if(inputWarn===true){
             setinputWarn(false);
             return;
-            console.log("warned");
         }
         else{
             console.log("herere");
@@ -203,7 +202,7 @@ function Homepage(){
                         <p>The number of blocks here indicates the length of the movie.</p>
                         <p>All the Vowels in the movie name will be visible to the player by default.</p>
                     </div>
-                    <img src={step1}></img>
+                    <img src={step1} alt="step1"></img>
                 </div>
                 <div className="row">
                     <div className="col">
@@ -211,35 +210,35 @@ function Homepage(){
                         <p>This section indicates the number of lives.</p>
                         <p>9 Letters = 9 Life</p>
                     </div>
-                    <img src={step2}></img>
+                    <img src={step2} alt="step2"></img>
                 </div>
                 <div className="row">
                     <div className="col">
                         <h2>Step3</h2>
                         <p>This is the interactive section where player will make a guess!</p>
                     </div>
-                    <img src={step3}></img>
+                    <img src={step3} alt="step3"></img>
                 </div>
                 <div className="row">
                     <div className="col">
                         <h2>Step4</h2>
                         <p>If the guess made by the player is <span id="greenText">correct</span>, It will be filled in its correct position</p>
                     </div>
-                    <img src={step4}></img>
+                    <img src={step4} alt="step4"></img>
                 </div>
                 <div className="row">
                     <div className="col">
                         <h2>Step5</h2>
                         <p>If the guess made by the player is <span id="redText">wrong</span>, One life will be deducted!</p>
                     </div>
-                    <img src={step5}></img>
+                    <img src={step5} alt="step5"></img>
                 </div>
                 <div className="row">
                     <div className="col">
                         <h2>Step6</h2>
                         <p>This is the section where player can see the previous guess made</p>
                     </div>
-                    <img src={step6}></img>
+                    <img src={step6} alt="step6"></img>
                 </div>
             </div>
             <div className="rightPage" id="rightpage">

@@ -852,6 +852,10 @@ body{
         font-size: 9vw !important;
     }
 
+    .bottom-section{
+        width: 100%;
+    }
+
 
     .userInput h1{
         font-size: 9vw !important;

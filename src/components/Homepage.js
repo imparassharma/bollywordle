@@ -66,7 +66,7 @@ function Homepage(){
                 count =0;
             }
             count++;
-            if(window.innerWidth<450 && count>7){
+            if(window.innerWidth<450 && count>8){
                 setinputWarn(true);
                 event.target.value = "";
                 console.log("warned");

@@ -1,6 +1,10 @@
 @font-face { font-family: Homepage; src: url('./ELNATH.ttf'); } 
 @font-face { font-family: Main; src: url('./font1.otf'); } 
 
+*{
+    box-sizing: border-box;
+}
+
 body{
     margin: 0;
     padding: 0;

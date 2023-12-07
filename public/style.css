@@ -904,11 +904,10 @@ body{
         margin: 2rem 0rem 0rem 2rem;
     }
 
-    .newDiv{
+    .newDiv {
         width: 100%;
-        left: 0;
-        top: 0;
-        padding: 30rem 0rem;
+        padding: 10rem 0rem;
+        /* padding: 30rem 0rem; */
     }
 
     .gaming-section{

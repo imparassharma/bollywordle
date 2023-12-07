@@ -66,18 +66,11 @@ function Main(){
             const enterbtn = enterBtnRef.current;
             const blockContainer = blockContainerRef.current;
                 lives.style.fontSize = "3.5vw";
-                blockContainer.style.gap = "1vw";
+                blockContainer.style.gap = "3vw";
                 enterbtn.style.fontSize = "1.5vw";
                 theBoxes.forEach(box => {
                     box.style.width = "45vw";
                 });
-        }
-
-        if (wordCount > 7 && window.innerWidth < 400) {
-            const howmany = howManyRef.current;
-            if (boxcreated === 1) {
-                howmany.classList.remove("hidden");
-            }
         }
         setCorrectguess([]);
         correct = 0;

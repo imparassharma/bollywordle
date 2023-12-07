@@ -212,7 +212,7 @@ body{
 .block-container{
     display: flex;
     justify-content: center;
-    gap: 3vw;
+    gap: 5vw;
     flex-wrap: wrap;
 }
 
@@ -221,7 +221,7 @@ body{
     border: none !important;
     outline: none !important;
     box-shadow: none !important;
-    width: 2rem !important;
+    display: none !important;
 }
 
 .word-block{
@@ -712,6 +712,10 @@ body{
         height: 12vh;
     }
 
+    .block-container{
+        gap: 8vw;
+    }
+
     
 }
 
@@ -720,6 +724,8 @@ body{
     .container h2{
         font-size: 4.5vw;
     }
+
+    
 
     .challengeSection input{
         width: 52vw;
@@ -747,7 +753,7 @@ body{
     }
 
     .block-container{
-        gap: 2vw !important;
+        gap: 8vw !important;
     }
     
     .chances h1{
@@ -860,7 +866,7 @@ body{
     }
 
     .block-container{
-        gap: 2vw !important;
+        gap: 8vw !important;
         width: 99vw;
     }
 
